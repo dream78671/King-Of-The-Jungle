@@ -59,7 +59,12 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
             grounded = true;
             jumpCount = maxJumps;
-     
+    }
+
+    //Player can attack if these criteria are met - Player is grounded
+    public bool canAttack() 
+    {
+        return grounded == true; 
     }
 
 }
