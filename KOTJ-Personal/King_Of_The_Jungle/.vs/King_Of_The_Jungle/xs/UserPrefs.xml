@@ -1,12 +1,14 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerMovement.cs">
+﻿<Properties StartupConfiguration="{9E0096D7-246E-F154-0D45-F282C95928F6}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Networking/NameInputField.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="64" Column="71" />
+      <File FileName="Assets/Scripts/Networking/ConnectManager.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="71" Column="1" />
+      <File FileName="Assets/Scripts/Networking/NameInputField.cs" Line="13" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c6174d3f-cf68-41c8-b2cf-2b9780d1f785" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="de52ba0d-4734-471b-9fe3-e5628a3a5ca5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
