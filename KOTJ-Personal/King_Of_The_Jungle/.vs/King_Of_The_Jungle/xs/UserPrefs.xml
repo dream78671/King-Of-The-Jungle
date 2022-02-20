@@ -1,14 +1,17 @@
 ﻿<Properties StartupConfiguration="{9E0096D7-246E-F154-0D45-F282C95928F6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Networking/NameInputField.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Networking/ConnectManager.cs" Line="14" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="71" Column="1" />
-      <File FileName="Assets/Scripts/Networking/NameInputField.cs" Line="13" Column="22" />
+      <File FileName="Assets/Scripts/Networking/ConnectManager.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" />
+      <File FileName="Assets/Scripts/Networking/NameInputField.cs" />
+      <File FileName="Assets/Scripts/GameController/GameSetup.cs" />
+      <File FileName="Assets/Scripts/GameController/PlayerManager.cs" Line="19" Column="6" />
+      <File FileName="Assets/Scripts/GameController/PlayerController.cs" Line="30" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="de52ba0d-4734-471b-9fe3-e5628a3a5ca5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="85e22442-d0f8-415a-a641-e45d698c1d12" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

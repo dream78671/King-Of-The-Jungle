@@ -17,12 +17,13 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>(); //Gets component from game object from inspector tab
         anim = GetComponent<Animator>(); 
         jumpCount = maxJumps;
+        Debug.Log("Spawned");
     }
 
     private void Update() //Runs every frame
     {
 
-        Debug.Log(jumpCount);
+        
         float horizontalInput = Input.GetAxis("Horizontal"); //Store horizontal Input (-1, 0 ,1)
 
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
