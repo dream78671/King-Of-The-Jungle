@@ -11,7 +11,7 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     [SerializeField] private TextMeshProUGUI StatusText;
 
     private bool isConnecting = false;
-    private const string gameVersion = "0.01";
+    private const string gameVersion = "1.0";
 
     void Awake()
     {
@@ -65,6 +65,7 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     //If no room available, create new room
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
+        Debug.Log(message);
         ShowStatus("Creating a new room...");
         PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions { MaxPlayers = 2 });
     }
@@ -79,7 +80,7 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     //When room has been joined
     public override void OnJoinedRoom()
     {
-        ShowStatus("Joined room - waiting for another player.");
+        ShowStatus("Joined room - waiting for another player. Room: \n"+ PhotonNetwork.CurrentRoom.ToStringFull());
     }
 
     //Once 2 players in a room, master client changes everyone to the game scene

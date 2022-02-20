@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     PhotonView PV;
 
     [SerializeField] private float timeLeft;
-    private bool canMove = true; 
+    public bool canMove = false; 
 
 
     private void Awake() //Called Everytime script is loaded
@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         PV = GetComponent<PhotonView>(); 
         jumpCount = maxJumps;
-        Debug.Log("Spawned");
     }
 
     private void Update() //Runs every frame

@@ -5,12 +5,18 @@ using Photon.Pun;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System;
+using TMPro;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager Instance;
+    [SerializeField] private TextMeshProUGUI WaitText;
 
-    public GameState State; 
+    public GameState State;
+    public static event Action<GameState> OnGameStateChanged;
+
+    private bool nextTurnHost = true;
+    private int timePerMove = 3; 
 
     private void Awake()
     {
@@ -22,6 +28,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         DontDestroyOnLoad(gameObject); //If only one, make this the manager
         Instance = this;
+        UpdateGameState(GameState.Wait);
+
     }
 
     public override void OnEnable()
@@ -45,17 +53,21 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
+    //Function to chnage GameStates
     public void UpdateGameState(GameState newState)
     {
         State = newState;  
 
         switch (newState)
         {
-            case GameState.StartGame:
+            case GameState.Wait:
+                StartCoroutine(Wait());
                 break;
             case GameState.HostTurn:
+                StartCoroutine(HostTurn());
                 break;
             case GameState.NotHostTurn:
+                StartCoroutine(NotHostTurn()); 
                 break;
             case GameState.Victory:
                 break;
@@ -64,14 +76,54 @@ public class GameManager : MonoBehaviourPunCallbacks
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null); 
         }
+
+        OnGameStateChanged?.Invoke(newState);
     }
 
+    //Wait between each player move
+    private IEnumerator Wait()
+    {
+        WaitText.gameObject.SetActive(true);
+        Debug.Log("Wait Called");
+
+        yield return new WaitForSeconds(3);
+        WaitText.gameObject.SetActive(false);
+
+        if (nextTurnHost)
+        {
+            nextTurnHost = false;
+            UpdateGameState(GameState.HostTurn);  
+        }
+        else
+        {
+            nextTurnHost = true;
+            UpdateGameState(GameState.NotHostTurn);
+        }
+    }
+
+    private IEnumerator NotHostTurn()
+    {
+        Debug.Log("NotHostTurn");
+
+        yield return new WaitForSeconds(timePerMove);
+
+        UpdateGameState(GameState.Wait);
+    }
+
+    private IEnumerator HostTurn()
+    {
+        Debug.Log("HostTurn");
+
+        yield return new WaitForSeconds(timePerMove);
+
+        UpdateGameState(GameState.Wait);
+    }
 }
 
 
 public enum GameState
 {
-    StartGame,
+    Wait,
     HostTurn,
     NotHostTurn,
     Victory,

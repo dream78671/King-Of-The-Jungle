@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using System.IO; 
+using System.IO;
+using TMPro;
 
 public class PlayerManager : MonoBehaviourPunCallbacks
 {
@@ -24,6 +25,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
         {
             CreatePlayer();
         }
+
     }
 
     void CreatePlayer()
