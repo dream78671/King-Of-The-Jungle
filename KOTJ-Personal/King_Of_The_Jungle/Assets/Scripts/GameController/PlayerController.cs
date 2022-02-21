@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
+using System;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IOnEventCallback
 {
+    private const int TURN_CHANGE = 1;
+
+
     private Rigidbody2D body;
     private Animator anim;
     [SerializeField] private float speed;
@@ -14,28 +20,52 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
     PhotonView PV;
 
-    [SerializeField] private float timeLeft;
-    public bool canMove = false; 
+    private bool canMove = false;
+    private bool master; 
 
+    private void OnEnable()
+    {
+        PhotonNetwork.AddCallbackTarget(this);
+        PhotonNetwork.NetworkingClient.EventReceived += OnEvent;
+
+    }
+
+    private void OnDisable()
+    {
+        PhotonNetwork.RemoveCallbackTarget(this);
+        PhotonNetwork.NetworkingClient.EventReceived -= OnEvent;
+    }
+
+    private void NetworkingClient_EventReceived(EventData obj)
+    {
+        if(obj.Code == TURN_CHANGE)
+        {
+            object[] data = (object[])obj.CustomData;
+            Debug.Log(data.ToString());
+        }
+    }
 
     private void Awake() //Called Everytime script is loaded
     {
         body = GetComponent<Rigidbody2D>(); //Gets component from game object from inspector tab
         anim = GetComponent<Animator>();
-        PV = GetComponent<PhotonView>(); 
+        PV = GetComponent<PhotonView>();
         jumpCount = maxJumps;
+        gameObject.tag = "Player";
+
+        if (PV.IsMine && PhotonNetwork.IsMasterClient)
+            master = true;
+        else
+            master = false;
     }
 
     private void Update() //Runs every frame
     {
-        //If view isn't mine, do nothing
         if (!PV.IsMine)
-            Destroy(body); //Should delete body that isn't your own - stops buginess
+            return;
 
         if (!canMove)
-        {
             return;
-        }
 
         float horizontalInput = Input.GetAxis("Horizontal"); //Store horizontal Input (-1, 0 ,1)
 
@@ -60,9 +90,6 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Grounded", grounded);
     }
 
-
-
-
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpPower);
@@ -83,5 +110,19 @@ public class PlayerController : MonoBehaviour
     public bool canAttack()
     {
         return grounded == true;
+    }
+
+    public void OnEvent(EventData photonEvent)
+    {
+        if (photonEvent.Code == TURN_CHANGE)
+        {
+            object[] data = (object[])photonEvent.CustomData;
+
+            //Index 0 - Master, Index 1 - Other Player
+            if (master)
+                canMove = (bool)data[0];
+            else
+                canMove = (bool)data[1];
+        }
     }
 }

@@ -1953,6 +1953,8 @@ namespace Photon.Realtime
         /// <remarks>Introduced mainly for webhooks 1.2 to control behavior of forwarded HTTP requests.</remarks>
         public WebFlags Flags = WebFlags.Default;
 
+        public object Reciever { get; set; }
+
         ///// <summary>Used along with CachingOption SliceSetIndex, SlicePurgeIndex or SlicePurgeUpToIndex if you want to set or purge a specific cache-slice.</summary>
         //public int CacheSliceIndex;
     }

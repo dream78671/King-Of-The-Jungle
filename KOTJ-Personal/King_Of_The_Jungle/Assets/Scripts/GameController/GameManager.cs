@@ -6,17 +6,34 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System;
 using TMPro;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
-public class GameManager : MonoBehaviourPunCallbacks
+public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
-    public static GameManager Instance;
-    [SerializeField] private TextMeshProUGUI WaitText;
+    //Turn Change Variables
+    private const int TURN_CHANGE = 1;
+    object[] NotMasterTurn = new object[] { false, true }; //MasterClient Disabled, Other Enabled
+    object[] MasterTurn = new object[] { true, false }; //MasterClient Enabled, Other Disabled
+    object[] DisableAll = new object[] { false, false }; //MasterClient Enabled, Other Disabled
+    RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All }; //Send event to all clients
 
+
+    public static GameManager Instance;
     public GameState State;
+    [SerializeField] private TextMeshProUGUI WaitText; 
     public static event Action<GameState> OnGameStateChanged;
 
+    //Player Spawn Coordinates
+    public float spawn1x;
+    public float spawn1y;
+    public float spawn2x;
+    public float spawn2y;
+
+    
+
     private bool nextTurnHost = true;
-    private int timePerMove = 3; 
+    private int timePerMove = 3;
 
     private void Awake()
     {
@@ -36,24 +53,32 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         base.OnEnable();
         SceneManager.sceneLoaded += OnSceneLoaded;
+        PhotonNetwork.AddCallbackTarget(this);
+        PhotonNetwork.NetworkingClient.EventReceived += OnEvent;
     }
 
     public override void OnDisable()
     {
         base.OnDisable();
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        PhotonNetwork.RemoveCallbackTarget(this);
+        PhotonNetwork.NetworkingClient.EventReceived -= OnEvent;
     }
 
     //If scene has loaded, Create a new playerManager object for each player
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if(scene.buildIndex == 1)
+        if (scene.buildIndex == 1 && PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
+            GameObject Master = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn1x, spawn1y, -8), Quaternion.identity);
+        }
+        else if (scene.buildIndex == 1 && !PhotonNetwork.IsMasterClient)
+        {
+            GameObject NotMaster = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn2x, spawn2y, -8), Quaternion.identity);
         }
     }
 
-    //Function to chnage GameStates
+    //Function to change GameStates
     public void UpdateGameState(GameState newState)
     {
         State = newState;  
@@ -87,6 +112,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         Debug.Log("Wait Called");
 
         yield return new WaitForSeconds(3);
+
         WaitText.gameObject.SetActive(false);
 
         if (nextTurnHost)
@@ -104,25 +130,36 @@ public class GameManager : MonoBehaviourPunCallbacks
     private IEnumerator NotHostTurn()
     {
         Debug.Log("NotHostTurn");
-
+        PhotonNetwork.RaiseEvent(TURN_CHANGE, NotMasterTurn, raiseEventOptions, SendOptions.SendReliable);
         yield return new WaitForSeconds(timePerMove);
 
+        PhotonNetwork.RaiseEvent(TURN_CHANGE, DisableAll, raiseEventOptions, SendOptions.SendReliable);
         UpdateGameState(GameState.Wait);
     }
 
     private IEnumerator HostTurn()
     {
         Debug.Log("HostTurn");
-
+        PhotonNetwork.RaiseEvent(TURN_CHANGE, MasterTurn, raiseEventOptions, SendOptions.SendReliable);
         yield return new WaitForSeconds(timePerMove);
 
+        PhotonNetwork.RaiseEvent(TURN_CHANGE, DisableAll, raiseEventOptions, SendOptions.SendReliable);
         UpdateGameState(GameState.Wait);
+    }
+
+    public void OnEvent(EventData photonEvent)
+    {
+        if (photonEvent.Code == 2)
+            Debug.Log("GamaManger Code 2 Event Run");
+        else
+            Debug.Log("GameManager Event Run");           
     }
 }
 
 
 public enum GameState
 {
+    Setup,
     Wait,
     HostTurn,
     NotHostTurn,

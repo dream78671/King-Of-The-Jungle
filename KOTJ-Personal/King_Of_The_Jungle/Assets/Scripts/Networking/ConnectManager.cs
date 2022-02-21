@@ -80,7 +80,7 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     //When room has been joined
     public override void OnJoinedRoom()
     {
-        ShowStatus("Joined room - waiting for another player. Room: \n"+ PhotonNetwork.CurrentRoom.ToStringFull());
+        ShowStatus("Joined room - waiting for another player.");
     }
 
     //Once 2 players in a room, master client changes everyone to the game scene

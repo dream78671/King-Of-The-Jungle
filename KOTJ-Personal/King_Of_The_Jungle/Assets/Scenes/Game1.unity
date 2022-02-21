@@ -31247,9 +31247,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba758af71ee342a6ac7682a4622cc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaitText: {fileID: 461747635}
   State: 0
-  timePerMove: 3
+  WaitText: {fileID: 461747635}
+  spawn1x: -11
+  spawn1y: 3
+  spawn2x: 8
+  spawn2y: 3
 --- !u!114 &1748657293
 MonoBehaviour:
   m_ObjectHideFlags: 0
