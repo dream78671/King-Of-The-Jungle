@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController/PlayerController.cs">
     <Files>
       <File FileName="Assets/Scripts/Networking/ConnectManager.cs" Line="94" Column="10" />
-      <File FileName="Assets/Scripts/GameController/PlayerController.cs" Line="128" Column="2" />
-      <File FileName="Assets/Scripts/GameController/GameManager.cs" Line="146" Column="1" />
+      <File FileName="Assets/Scripts/GameController/PlayerController.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/GameController/GameManager.cs" Line="37" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
