@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour, IOnEventCallback
         body = GetComponent<Rigidbody2D>(); //Gets component from game object from inspector tab
         anim = GetComponent<Animator>();
         PV = GetComponent<PhotonView>();
+        body.freezeRotation = true;
         jumpCount = maxJumps;
         gameObject.tag = "Player";
 
