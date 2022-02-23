@@ -4,10 +4,10 @@ ScriptsOnlyBuild:
     - ConnectManager
     - GameManager
     - GunInfo
+    - GunMechanics
     - NameInputField
     - PlayerController
     - Projectile
-    - Shoot
     - SingleFireWeapon
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
@@ -169,35 +169,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3588}
     - Class: 114
-      Script: {instanceID: 4204}
+      Script: {instanceID: 4206}
     - Class: 114
-      Script: {instanceID: 4628}
+      Script: {instanceID: 4630}
     - Class: 114
-      Script: {instanceID: 4634}
+      Script: {instanceID: 4636}
     - Class: 114
-      Script: {instanceID: 4728}
+      Script: {instanceID: 4730}
     - Class: 114
-      Script: {instanceID: 4860}
+      Script: {instanceID: 4862}
     - Class: 114
-      Script: {instanceID: 4924}
+      Script: {instanceID: 4926}
     - Class: 114
-      Script: {instanceID: 5038}
+      Script: {instanceID: 5040}
     - Class: 114
-      Script: {instanceID: 5070}
-    - Class: 114
-      Script: {instanceID: 5474}
+      Script: {instanceID: 5072}
     - Class: 114
       Script: {instanceID: 5476}
     - Class: 114
-      Script: {instanceID: 5654}
+      Script: {instanceID: 5478}
     - Class: 114
-      Script: {instanceID: 5676}
+      Script: {instanceID: 5656}
     - Class: 114
-      Script: {instanceID: 5690}
+      Script: {instanceID: 5678}
     - Class: 114
-      Script: {instanceID: 6092}
+      Script: {instanceID: 5692}
     - Class: 114
-      Script: {instanceID: 26948}
+      Script: {instanceID: 6094}
+    - Class: 114
+      Script: {instanceID: 26758}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -270,7 +270,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3472}
     - Class: 114
-      Script: {instanceID: 5054}
+      Script: {instanceID: 5056}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -853,7 +853,7 @@ ScriptsOnlyBuild:
       Hash: 0cf4bdcf39dc92cd3bb204494e724d43
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Shoot
+    className: GunMechanics
   - hash:
       serializedVersion: 2
       Hash: 57d2b3ca58a430f7cf319bb757c1f0f5
@@ -1052,6 +1052,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: b5296725310b70289e5ac7ee2e1c950c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1258,7 +1264,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 265b17de4aa969ccbbfb0a4cafa270ab
+      Hash: 3dd5e3376eea56ff4bf58fafb3307a61
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1564,7 +1570,7 @@ ScriptsOnlyBuild:
     className: StringInputField
   - hash:
       serializedVersion: 2
-      Hash: 97ef6bf4e3bc4048120649a444e03eb5
+      Hash: dd7c5d23923e6295ff55f4bd876c3bf7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GunInfo

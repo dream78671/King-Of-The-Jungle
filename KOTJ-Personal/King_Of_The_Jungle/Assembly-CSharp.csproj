@@ -56,19 +56,19 @@
     <Compile Include="Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs" />
     <Compile Include="Assets/Photon/PhotonLibs/WebSocket/WebSocket.cs" />
     <Compile Include="Assets/Scripts/Networking/ConnectManager.cs" />
+    <Compile Include="Assets/Scripts/Player/GunRelated/Projectile.cs" />
+    <Compile Include="Assets/Scripts/Player/GunRelated/SingleFireWeapon.cs" />
     <Compile Include="Assets/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs" />
-    <Compile Include="Assets/Scripts/Player/Shoot.cs" />
+    <Compile Include="Assets/Scripts/Player/GunRelated/ItemInfo.cs" />
+    <Compile Include="Assets/Scripts/Player/GunRelated/Gun.cs" />
+    <Compile Include="Assets/Scripts/Player/GunMechanics.cs" />
+    <Compile Include="Assets/Scripts/Player/IDamageable.cs" />
     <Compile Include="Assets/Scripts/Networking/TestLobbyJoin.cs" />
+    <Compile Include="Assets/Scripts/Player/GunRelated/Item.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerController.cs" />
     <Compile Include="Assets/Scripts/GameController/GameManager.cs" />
-    <Compile Include="Assets/Scripts/Networking/NameInputField.cs" />
-    <Compile Include="Assets/Scripts/Player/GunRelated/ItemInfo.cs" />
     <Compile Include="Assets/Scripts/Player/GunRelated/GunInfo.cs" />
-    <Compile Include="Assets/Scripts/Player/GunRelated/Item.cs" />
-    <Compile Include="Assets/Scripts/Player/GunRelated/Gun.cs" />
-    <Compile Include="Assets/Scripts/Player/GunRelated/SingleFireWeapon.cs" />
-    <Compile Include="Assets/Scripts/Player/IDamageable.cs" />
-    <Compile Include="Assets/Scripts/Player/GunRelated/Projectile.cs" />
+    <Compile Include="Assets/Scripts/Networking/NameInputField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

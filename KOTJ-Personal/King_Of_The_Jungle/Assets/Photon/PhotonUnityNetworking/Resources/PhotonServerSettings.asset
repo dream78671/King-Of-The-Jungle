@@ -42,6 +42,7 @@ MonoBehaviour:
   - setMove
   - TakeDamage
   - RPC_TakeDamage
+  - RPC_UpdateHealthBar
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

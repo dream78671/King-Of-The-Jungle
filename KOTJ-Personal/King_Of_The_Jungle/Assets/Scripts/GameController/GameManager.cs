@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     [SerializeField] private TextMeshProUGUI MessageText; 
     public static event Action<GameState> OnGameStateChanged;
 
-    public enum GameState { Setup, Wait, HostTurn, NotHostTurn, Victory, Lose }
+    public enum GameState { Start, Wait, HostTurn, NotHostTurn, Victory, Lose }
 
     //Player Spawn Coordinates
     public float spawn1x;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
 
     private bool nextTurnHost = true;
-    private int timePerMove = 3;
+    private int timePerMove = 6;
 
     private void Awake()
     {
@@ -129,8 +129,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     private IEnumerator HostTurn()
     {
         //Another wait method called - if not called, player can move while overlay is showing
-        StartCoroutine(ShowMessage("Host Turn", 1));
-        yield return new WaitForSeconds(1);
+        StartCoroutine(ShowMessage("Host Turn", 2));
+        yield return new WaitForSeconds(2);
 
         //Raise Event - Event sent to all listeners
         PhotonNetwork.RaiseEvent(TURN_CHANGE, MasterTurn, raiseEventOptions, SendOptions.SendReliable);
@@ -142,8 +142,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     private IEnumerator NotHostTurn()
     {
-        StartCoroutine(ShowMessage("Not Host Turn", 1));
-        yield return new WaitForSeconds(1);
+        StartCoroutine(ShowMessage("Not Host Turn", 2));
+        yield return new WaitForSeconds(2);
 
         //Raise event - Event sent to all listeners
         PhotonNetwork.RaiseEvent(TURN_CHANGE, NotMasterTurn, raiseEventOptions, SendOptions.SendReliable);

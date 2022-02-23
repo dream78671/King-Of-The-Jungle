@@ -5,6 +5,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
 using System;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDamageable
 {
@@ -17,15 +19,16 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
     [SerializeField] int maxJumps;
+    [SerializeField] Slider slider; 
     private int jumpCount;
     private bool grounded;
     
-    private bool canMove = true;
-    public bool canShoot = true; 
+    private bool canMove = false;
+    public bool canShoot = false; 
     private bool master;
 
     private const float maxHealth = 100;
-    private float health;
+    public float health;
 
     //Needed for handling Events
     public override void OnEnable()
@@ -77,7 +80,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 1, 1);
 
-
         //Jump - GetKeyDown used to only register the initial click, not holding the space bar
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -106,15 +108,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         jumpCount = maxJumps;
     }
 
-    //Player can attack if these criteria are met - Player is grounded
-    public bool CanAttack()
-    {
-        return grounded == true;
-    }
-
-
+    //Photon - Deals with events that are called
     public void OnEvent(EventData photonEvent)
     {
+        //TURN CHANGE EVENT - CALL SENT BY GAMEMANAGER
         if (photonEvent.Code == TURN_CHANGE)
         {
             object[] data = (object[])photonEvent.CustomData;
@@ -142,16 +139,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     [PunRPC]
     void RPC_TakeDamage(float damage)
     {
-        if (!PV.IsMine) //Cant Damage Yourself
-        {
-            return;
-        }
-
         health -= damage;
-        if (health <= 0)
-        {
-            Die();
-        }
+        slider.value = 1 - (health / maxHealth);
     }
 
     void Die()
