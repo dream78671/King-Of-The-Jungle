@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 461747636}
   - component: {fileID: 461747635}
   m_Layer: 8
-  m_Name: Wait
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31290,6 +31290,7 @@ MonoBehaviour:
   State: 0
   Overlay: {fileID: 1479467853}
   MessageText: {fileID: 461747635}
+  CountdownText: {fileID: 0}
   spawn1x: -11
   spawn1y: 3
   spawn2x: 8

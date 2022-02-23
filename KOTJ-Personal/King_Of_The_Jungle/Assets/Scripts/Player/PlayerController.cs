@@ -11,6 +11,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDamageable
 {
     private const int TURN_CHANGE = 1;
+    private const int WINNER = 2;
+
+    RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All }; //Send event to all clients
 
     private Rigidbody2D body;
     private Animator anim;
@@ -90,6 +93,9 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         //If character is moving, turn run animation on, else turn it off
         anim.SetBool("Run", horizontalInput != 0);
         anim.SetBool("Grounded", grounded);
+
+        if (health <= 0)
+            Die();
     }
 
     private void Jump()
@@ -98,6 +104,9 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         anim.SetTrigger("Jump");
         jumpCount -= 1;
         grounded = false;
+
+        Debug.Log(PhotonNetwork.PlayerList[0].ToString());
+        Debug.Log(PhotonNetwork.NickName); 
     }
 
     //When player collides with Ground, reset number of jumps
@@ -145,7 +154,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
 
     void Die()
     {
-
+        object[] winner = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString()};
+        PhotonNetwork.RaiseEvent(WINNER, winner, raiseEventOptions, SendOptions.SendReliable);
     }
 
 }

@@ -13,16 +13,18 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
     //Turn Change Variables
     private const int TURN_CHANGE = 1;
+    private const int WINNER = 2;
     object[] NotMasterTurn = new object[] { false, true }; //MasterClient Disabled, Other Enabled
     object[] MasterTurn = new object[] { true, false }; //MasterClient Enabled, Other Disabled
     object[] DisableAll = new object[] { false, false }; //MasterClient Enabled, Other Disabled
     RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All }; //Send event to all clients
 
+    private string winner;
 
     public static GameManager Instance;
     public GameState State;
     [SerializeField] private Canvas Overlay; 
-    [SerializeField] private TextMeshProUGUI MessageText; 
+    [SerializeField] private TextMeshProUGUI MessageText;
     public static event Action<GameState> OnGameStateChanged;
 
     public enum GameState { Start, Wait, HostTurn, NotHostTurn, Victory, Lose }
@@ -98,9 +100,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 StartCoroutine(NotHostTurn()); 
                 break;
             case GameState.Victory:
+                StartCoroutine(Victory());
                 break;
-            case GameState.Lose:
-                break;
+
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null); 
         }
@@ -108,13 +110,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         OnGameStateChanged?.Invoke(newState);
     }
 
+    
     //Wait between each player move
     private IEnumerator Wait()
     {
-        StartCoroutine(ShowMessage("End Of Turn", 2));
+        StartCoroutine(ShowMessage("Get Ready To Fight", 2));
         yield return new WaitForSeconds(2);
 
-        if (nextTurnHost)
+        if(nextTurnHost)
         {
             nextTurnHost = false;
             UpdateGameState(GameState.HostTurn);  
@@ -153,13 +156,33 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         UpdateGameState(GameState.Wait);
     }
 
+    private IEnumerator Victory()
+    {
+        StartCoroutine(ShowMessage(winner + " WINS!", 10));
+        yield return new WaitForSeconds(10);
+    }
+
+
+    //private IEnumerator Victory()
+    //{
+    //    StartCoroutine(ShowMessage("Not Host Turn", 2));
+    //}
+
     public void OnEvent(EventData photonEvent)
     {
-                
+        //WINNER EVENT - SENT BY LOSING PLAYER
+        if (photonEvent.Code == WINNER)
+        {
+            StopAllCoroutines();
+            object[] data = (object[])photonEvent.CustomData;
+            //Index 0 - Master, Index 1 - Other Player
+            winner = data[1].ToString();
+            UpdateGameState(GameState.Victory);
+        }
     }
 
     //Show pop up message in game - text = msg shown, time = length of msg popup
-    private IEnumerator ShowMessage(String text, int time)
+    private IEnumerator ShowMessage(String text ,int time)
     {
         MessageText.text = text;
         Overlay.gameObject.SetActive(true);
