@@ -6,10 +6,9 @@ using Photon.Realtime;
 using ExitGames.Client.Photon;
 using System;
 
-public class PlayerController : MonoBehaviour, IOnEventCallback
+public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDamageable
 {
     private const int TURN_CHANGE = 1;
-
 
     private Rigidbody2D body;
     private Animator anim;
@@ -21,19 +20,21 @@ public class PlayerController : MonoBehaviour, IOnEventCallback
     private int jumpCount;
     private bool grounded;
     
-
-    private bool canMove = false;
+    private bool canMove = true;
+    public bool canShoot = true; 
     private bool master;
 
+    private const float maxHealth = 100;
+    private float health;
+
     //Needed for handling Events
-    private void OnEnable()
+    public override void OnEnable()
     {
         PhotonNetwork.AddCallbackTarget(this);
         PhotonNetwork.NetworkingClient.EventReceived += OnEvent;
-
     }
 
-    private void OnDisable()
+    public override void OnDisable()
     {
         PhotonNetwork.RemoveCallbackTarget(this);
         PhotonNetwork.NetworkingClient.EventReceived -= OnEvent;
@@ -60,7 +61,11 @@ public class PlayerController : MonoBehaviour, IOnEventCallback
             return;
 
         if (!canMove)
+        {
+            canShoot = false; //Just to ensure it is false when player cannot move
             return;
+        }
+            
 
         float horizontalInput = Input.GetAxis("Horizontal"); //Store horizontal Input (-1, 0 ,1)
 
@@ -107,6 +112,7 @@ public class PlayerController : MonoBehaviour, IOnEventCallback
         return grounded == true;
     }
 
+
     public void OnEvent(EventData photonEvent)
     {
         if (photonEvent.Code == TURN_CHANGE)
@@ -115,9 +121,42 @@ public class PlayerController : MonoBehaviour, IOnEventCallback
 
             //Index 0 - Master, Index 1 - Other Player
             if (master)
+            {
                 canMove = (bool)data[0];
+                canShoot = (bool)data[0];
+            }
             else
+            {
                 canMove = (bool)data[1];
+                canShoot= (bool)data[1];
+            }
         }
     }
+
+    
+    public void TakeDamage(float damage)
+    {
+        PV.RPC("RPC_TakeDamage", RpcTarget.All, damage);
+    }
+
+    [PunRPC]
+    void RPC_TakeDamage(float damage)
+    {
+        if (!PV.IsMine) //Cant Damage Yourself
+        {
+            return;
+        }
+
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+
+    }
+
 }

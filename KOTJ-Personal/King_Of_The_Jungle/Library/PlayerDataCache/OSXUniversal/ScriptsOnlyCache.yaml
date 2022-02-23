@@ -3,8 +3,12 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - ConnectManager
     - GameManager
+    - GunInfo
     - NameInputField
     - PlayerController
+    - Projectile
+    - Shoot
+    - SingleFireWeapon
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -131,61 +135,69 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1780}
     - Class: 114
-      Script: {instanceID: 1816}
+      Script: {instanceID: 1790}
     - Class: 114
-      Script: {instanceID: 1820}
+      Script: {instanceID: 1818}
     - Class: 114
-      Script: {instanceID: 1902}
+      Script: {instanceID: 1822}
     - Class: 114
-      Script: {instanceID: 2316}
+      Script: {instanceID: 1900}
     - Class: 114
-      Script: {instanceID: 2452}
+      Script: {instanceID: 1906}
     - Class: 114
-      Script: {instanceID: 2520}
+      Script: {instanceID: 2320}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2456}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2524}
     - Class: 114
-      Script: {instanceID: 3004}
+      Script: {instanceID: 2790}
     - Class: 114
-      Script: {instanceID: 3186}
+      Script: {instanceID: 2962}
     - Class: 114
-      Script: {instanceID: 3450}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3460}
+      Script: {instanceID: 3194}
+    - Class: 114
+      Script: {instanceID: 3378}
     - Class: 114
       Script: {instanceID: 3462}
     - Class: 114
-      Script: {instanceID: 3576}
+      Script: {instanceID: 3472}
     - Class: 114
-      Script: {instanceID: 4188}
+      Script: {instanceID: 3474}
     - Class: 114
-      Script: {instanceID: 4612}
+      Script: {instanceID: 3588}
     - Class: 114
-      Script: {instanceID: 4618}
+      Script: {instanceID: 4204}
     - Class: 114
-      Script: {instanceID: 4712}
+      Script: {instanceID: 4628}
     - Class: 114
-      Script: {instanceID: 4844}
+      Script: {instanceID: 4634}
     - Class: 114
-      Script: {instanceID: 4908}
+      Script: {instanceID: 4728}
     - Class: 114
-      Script: {instanceID: 5022}
+      Script: {instanceID: 4860}
     - Class: 114
-      Script: {instanceID: 5054}
+      Script: {instanceID: 4924}
     - Class: 114
-      Script: {instanceID: 5458}
+      Script: {instanceID: 5038}
     - Class: 114
-      Script: {instanceID: 5460}
+      Script: {instanceID: 5070}
     - Class: 114
-      Script: {instanceID: 5638}
+      Script: {instanceID: 5474}
     - Class: 114
-      Script: {instanceID: 5672}
+      Script: {instanceID: 5476}
     - Class: 114
-      Script: {instanceID: 6074}
+      Script: {instanceID: 5654}
     - Class: 114
-      Script: {instanceID: 26440}
+      Script: {instanceID: 5676}
+    - Class: 114
+      Script: {instanceID: 5690}
+    - Class: 114
+      Script: {instanceID: 6092}
+    - Class: 114
+      Script: {instanceID: 26948}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -244,21 +256,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 1902}
+      Script: {instanceID: 1906}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2790}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2962}
     - Class: 114
-      Script: {instanceID: 3004}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3186}
+      Script: {instanceID: 3194}
     - Class: 114
-      Script: {instanceID: 3450}
+      Script: {instanceID: 3462}
     - Class: 114
-      Script: {instanceID: 3460}
+      Script: {instanceID: 3472}
     - Class: 114
-      Script: {instanceID: 5038}
+      Script: {instanceID: 5054}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -436,6 +448,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: be7c58ece932a007a8001107d96fa9b9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Projectile
+  - hash:
+      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -458,6 +476,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: CurrentRoomIsOpenProperty
+  - hash:
+      serializedVersion: 2
+      Hash: 49118f4e47a2baf08a8a748ea4898ae0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SingleFireWeapon
   - hash:
       serializedVersion: 2
       Hash: dcd6510802860a8c46ac579712118fc5
@@ -632,6 +656,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: PropertyListenerBase
+  - hash:
+      serializedVersion: 2
+      Hash: 1a286079cf1647bc90669bb8cf035be6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemInfo
   - hash:
       serializedVersion: 2
       Hash: 87207d40b89ca632396b05b3cb1e69b0
@@ -820,6 +850,12 @@ ScriptsOnlyBuild:
     className: SplinePosition
   - hash:
       serializedVersion: 2
+      Hash: 0cf4bdcf39dc92cd3bb204494e724d43
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Shoot
+  - hash:
+      serializedVersion: 2
       Hash: 57d2b3ca58a430f7cf319bb757c1f0f5
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -920,6 +956,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: aa41cf58dcfe3f675700d4c1fc45126a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TestLobbyJoin
   - hash:
       serializedVersion: 2
       Hash: c656dcc13ae391b68d594cc8f9c590b0
@@ -1216,7 +1258,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 7e70c76eb8ace66398ad4fa7f016c079
+      Hash: 265b17de4aa969ccbbfb0a4cafa270ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1520,6 +1562,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: StringInputField
+  - hash:
+      serializedVersion: 2
+      Hash: 97ef6bf4e3bc4048120649a444e03eb5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GunInfo
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f

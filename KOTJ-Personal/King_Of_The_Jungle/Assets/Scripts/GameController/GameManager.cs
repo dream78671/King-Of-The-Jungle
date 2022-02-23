@@ -155,8 +155,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public void OnEvent(EventData photonEvent)
     {
-        if (photonEvent.Code == 1)
-            Debug.Log("Turn_Change Called");         
+                
     }
 
     //Show pop up message in game - text = msg shown, time = length of msg popup
