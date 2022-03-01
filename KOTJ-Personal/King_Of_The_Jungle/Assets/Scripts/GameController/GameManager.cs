@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public float spawn2x;
     public float spawn2y;
 
-
     private bool nextTurnHost = true;
     private int timePerMove = 6;
 
@@ -161,12 +160,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         StartCoroutine(ShowMessage(winner + " WINS!", 10));
         yield return new WaitForSeconds(10);
     }
-
-
-    //private IEnumerator Victory()
-    //{
-    //    StartCoroutine(ShowMessage("Not Host Turn", 2));
-    //}
 
     public void OnEvent(EventData photonEvent)
     {
