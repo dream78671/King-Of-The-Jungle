@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     private int jumpCount;
     private bool grounded;
     
-    private bool canMove = false;
-    public bool canShoot = false; 
+    private bool canMove = true;
+    public bool canShoot = true; 
     private bool master;
 
     private const float maxHealth = 100;

@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemInfo: {fileID: 11400000, guid: 343c53e1552ba4c9fb40d14ddba1070c, type: 2}
   itemGameObject: {fileID: 2385979533519265262}
-  Projectile: {fileID: 5737099595901786824, guid: da56738e572bb4cd5ac1ada093796316, type: 3}
+  Projectile: {fileID: 8651243224143057339, guid: af93cd2927ae0404aa75dd89b71956b6, type: 3}
   ShootPoint: {fileID: 583848977088303613}
   ProjectileSpeed: 1500
 --- !u!1 &8600069655457736539
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemInfo: {fileID: 11400000, guid: 1b2ff7b608b854b6eb4dae2881eec2e4, type: 2}
   itemGameObject: {fileID: 4592312131939838574}
-  Projectile: {fileID: 5737099595901786824, guid: da56738e572bb4cd5ac1ada093796316, type: 3}
+  Projectile: {fileID: 1306322805487505171, guid: 7e6339e362ef14ee69d3ac483a849ff3, type: 3}
   ShootPoint: {fileID: 7821110554372444913}
   ProjectileSpeed: 1000
 --- !u!1 &9090919322882418465
