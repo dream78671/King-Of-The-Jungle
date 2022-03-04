@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using System.IO;
 
 //All single fire weapons will use this class
 public class SingleFireWeapon : Gun
@@ -16,9 +18,9 @@ public class SingleFireWeapon : Gun
     {
         //If left direction, flip projectile
         if(direction == -1)
-            ProjectileSpawn = Instantiate(Projectile, ShootPoint.position, ShootPoint.rotation * Quaternion.Euler(0f,180f,0f));
+            ProjectileSpawn = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", Projectile.name), ShootPoint.position, ShootPoint.rotation * Quaternion.Euler(0f,180f,0f));
         else
-            ProjectileSpawn = Instantiate(Projectile, ShootPoint.position, ShootPoint.rotation);
+            ProjectileSpawn = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", Projectile.name), ShootPoint.position, ShootPoint.rotation);
 
         //Instantiate and fire projectile depending on forces passed thorugh unity.
         ProjectileSpawn.GetComponent<Rigidbody2D>().AddForce(ProjectileSpawn.transform.right * ProjectileSpeed);

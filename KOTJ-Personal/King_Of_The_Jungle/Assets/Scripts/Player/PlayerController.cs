@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
-using System;
-using TMPro;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDamageable
@@ -26,8 +22,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     private int jumpCount;
     private bool grounded;
     
-    private bool canMove = true;
-    public bool canShoot = true; 
+    private bool canMove = false;
+    public bool canShoot = false; 
     private bool master;
 
     private const float maxHealth = 100;
@@ -66,13 +62,16 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         if (!PV.IsMine)
             return;
 
+        //Needs to check even if player cannot move
+        if (health <= 0)
+            Die();
+
         if (!canMove)
         {
             canShoot = false; //Just to ensure it is false when player cannot move
             return;
         }
-            
-
+        
         float horizontalInput = Input.GetAxis("Horizontal"); //Store horizontal Input (-1, 0 ,1)
 
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
@@ -93,9 +92,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         //If character is moving, turn run animation on, else turn it off
         anim.SetBool("Run", horizontalInput != 0);
         anim.SetBool("Grounded", grounded);
-
-        if (health <= 0)
-            Die();
     }
 
     private void Jump()
@@ -105,8 +101,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         jumpCount -= 1;
         grounded = false;
 
-        Debug.Log(PhotonNetwork.PlayerList[0].ToString());
-        Debug.Log(PhotonNetwork.NickName); 
     }
 
     //When player collides with Ground, reset number of jumps

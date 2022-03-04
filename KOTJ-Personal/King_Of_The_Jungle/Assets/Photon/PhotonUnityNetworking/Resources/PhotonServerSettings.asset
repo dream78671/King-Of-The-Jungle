@@ -43,6 +43,7 @@ MonoBehaviour:
   - TakeDamage
   - RPC_TakeDamage
   - RPC_UpdateHealthBar
+  - RPC_EquipItemToPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

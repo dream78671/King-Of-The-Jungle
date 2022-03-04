@@ -19,6 +19,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -167,35 +169,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3588}
     - Class: 114
-      Script: {instanceID: 4206}
+      Script: {instanceID: 4204}
     - Class: 114
-      Script: {instanceID: 4630}
+      Script: {instanceID: 4628}
     - Class: 114
-      Script: {instanceID: 4636}
+      Script: {instanceID: 4634}
     - Class: 114
-      Script: {instanceID: 4730}
+      Script: {instanceID: 4728}
     - Class: 114
-      Script: {instanceID: 4862}
+      Script: {instanceID: 4860}
     - Class: 114
-      Script: {instanceID: 4926}
+      Script: {instanceID: 4924}
     - Class: 114
-      Script: {instanceID: 5040}
+      Script: {instanceID: 5038}
     - Class: 114
-      Script: {instanceID: 5072}
+      Script: {instanceID: 5070}
+    - Class: 114
+      Script: {instanceID: 5474}
     - Class: 114
       Script: {instanceID: 5476}
     - Class: 114
-      Script: {instanceID: 5478}
+      Script: {instanceID: 5654}
     - Class: 114
-      Script: {instanceID: 5656}
+      Script: {instanceID: 5676}
     - Class: 114
-      Script: {instanceID: 5678}
+      Script: {instanceID: 5690}
     - Class: 114
-      Script: {instanceID: 5692}
+      Script: {instanceID: 6092}
     - Class: 114
-      Script: {instanceID: 6094}
-    - Class: 114
-      Script: {instanceID: 26758}
+      Script: {instanceID: 27350}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -268,7 +270,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3472}
     - Class: 114
-      Script: {instanceID: 5056}
+      Script: {instanceID: 5054}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -446,7 +448,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: be7c58ece932a007a8001107d96fa9b9
+      Hash: 50f2cd3e9b68594ce9c745768e14db54
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Projectile

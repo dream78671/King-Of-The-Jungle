@@ -96,21 +96,41 @@ public class GunMechanics : MonoBehaviourPunCallbacks
             return false;
     }
 
-    
+    //Equip player weapon
     void EquipItem(int _index)
     {
+        //If the player is trying to switch to the weapon already equipped return
         if (_index == previousItemIndex)
             return;
 
-        itemIndex = _index; 
+        itemIndex = _index;
 
         items[itemIndex].itemGameObject.SetActive(true);
 
+        //If the previous item is showing, hide the gameObject
         if (previousItemIndex != -1)
             items[previousItemIndex].itemGameObject.SetActive(false);
 
         previousItemIndex = itemIndex;
 
+
+        //If the view is mine, set my custom props to this index - hashtable used as thats how custom props are stored
+        if (PV.IsMine)
+        {
+            Hashtable hash = new Hashtable();
+            hash.Add("itemIndex", itemIndex);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(hash); 
+        }
+
     }
+
+    //Called whenever customProps of any player changes
+    public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+    {
+        //If the view isn't mine and the target player is the owner of the item change, set their custom props locally
+        if (!PV.IsMine && targetPlayer == PV.Owner)
+            EquipItem((int)changedProps["itemIndex"]); 
+    }
+
 
 }
