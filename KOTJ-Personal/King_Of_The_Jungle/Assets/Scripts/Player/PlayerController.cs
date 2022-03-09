@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     private int jumpCount;
     private bool grounded;
     
-    private bool canMove = false;
+    public bool canMove = false;
     public bool canShoot = false; 
     private bool master;
 

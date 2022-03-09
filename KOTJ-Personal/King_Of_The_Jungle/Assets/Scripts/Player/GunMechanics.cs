@@ -65,6 +65,10 @@ public class GunMechanics : MonoBehaviourPunCallbacks
         {
             items[itemIndex].Use(dirMultiplier);
             LocalPlayer.canShoot = false;
+            if (itemIndex != 0)
+            {
+                LocalPlayer.canMove = false; 
+            }
         }
     }
 

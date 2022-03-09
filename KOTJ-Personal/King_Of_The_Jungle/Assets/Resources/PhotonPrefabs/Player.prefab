@@ -661,6 +661,7 @@ MonoBehaviour:
   jumpPower: 5
   maxJumps: 3
   slider: {fileID: 2786900099441204304}
+  canMove: 0
   canShoot: 1
   health: 100
 --- !u!114 &7540612324454505923
