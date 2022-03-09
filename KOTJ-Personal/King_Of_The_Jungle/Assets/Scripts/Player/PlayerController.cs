@@ -55,6 +55,11 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
             master = true;
         else
             master = false;
+
+        if (!PV.IsMine)
+        {
+            Destroy(body);
+        }
     }
 
     private void Update() //Runs every frame
