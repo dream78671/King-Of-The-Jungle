@@ -69,16 +69,16 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         PhotonNetwork.NetworkingClient.EventReceived -= OnEvent;
     }
 
-    //If scene has loaded, Create a new playerManager object for each player
+    //If scene has loaded, Create a new playerManager object for each player - sceneIndex 2 refers to map 1 (sceneIndex is the scene order in build settings)
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if (scene.buildIndex == 1 && PhotonNetwork.IsMasterClient)
+        if (scene.buildIndex == 2 && PhotonNetwork.IsMasterClient)
         {
-            GameObject Master = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn1x, spawn1y, -8), Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn1x, spawn1y, -8), Quaternion.identity);
         }
-        else if (scene.buildIndex == 1 && !PhotonNetwork.IsMasterClient)
+        else if (scene.buildIndex == 2 && !PhotonNetwork.IsMasterClient)
         {
-            GameObject NotMaster = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn2x, spawn2y, -8), Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn2x, spawn2y, -8), Quaternion.identity);
         }
     }
 
@@ -105,7 +105,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null); 
         }
-
         OnGameStateChanged?.Invoke(newState);
     }
 

@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConnectPanel: {fileID: 2051235273}
+  StartGameButton: {fileID: 2083475903}
   StatusText: {fileID: 1450366564}
 --- !u!224 &254474904
 RectTransform:
@@ -517,7 +518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Connect
+  m_text: Start Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -613,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1056744279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1216,12 +1217,12 @@ GameObject:
   - component: {fileID: 2083475906}
   - component: {fileID: 2083475905}
   m_Layer: 5
-  m_Name: ConnectButton
+  m_Name: StartGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2083475904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1288,7 +1289,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 254474903}
         m_TargetAssemblyTypeName: ConnectManager, Assembly-CSharp
-        m_MethodName: Connect
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

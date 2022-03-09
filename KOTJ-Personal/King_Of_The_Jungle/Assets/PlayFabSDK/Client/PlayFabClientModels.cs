@@ -3911,6 +3911,8 @@ namespace PlayFab.ClientModels
         /// The experimentation treatments for this user at the time of login.
         /// </summary>
         public TreatmentAssignment TreatmentAssignment;
+
+        public object PlayerProfile { get; set; }
     }
 
     /// <summary>

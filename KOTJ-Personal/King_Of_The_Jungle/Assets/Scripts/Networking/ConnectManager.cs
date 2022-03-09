@@ -8,6 +8,7 @@ using Photon.Realtime;
 public class ConnectManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject ConnectPanel;
+    [SerializeField] private GameObject StartGameButton;
     [SerializeField] private TextMeshProUGUI StatusText;
 
     private bool isConnecting = false;
@@ -16,13 +17,15 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true; //Syncs master scene to everyone else
+        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.GameVersion = gameVersion;
+        ShowStatus("Connecting to Photon Servers...");
     }
 
 
     //Called when Connect Button is clicked
-    public void Connect()
+    public void StartGame()
     {
-        isConnecting = true;
         ConnectPanel.SetActive(false);
         ShowStatus("Connecting...");
 
@@ -55,11 +58,10 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     //If connect Button clicked and Photon server joined, Join a random room 
     public override void OnConnectedToMaster()
     {
-        if (isConnecting)
-        {
-            ShowStatus("Connected, joining room...");
-            PhotonNetwork.JoinRandomRoom();
-        }
+        ShowStatus("Connected to Servers");
+        StartGameButton.SetActive(true);
+        PhotonNetwork.NickName = PlayerPrefs.GetString("PlayerName");
+
     }
 
     //If no room available, create new room

@@ -32,20 +32,5 @@ public class LoginUI_Manager : MonoBehaviour
         loginUI.SetActive(false);
         registerUI.SetActive(true);
     }
-
-    public void RegisterButton()
-    {
-
-    }
-
-    public void LoginButton()
-    {
-
-    }
-
-    public void ResetPassword()
-    {
-        
-    }
 }
 
