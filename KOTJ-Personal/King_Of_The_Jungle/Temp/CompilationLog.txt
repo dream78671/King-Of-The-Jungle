@@ -1,2 +1,38 @@
+# Starting compiling UnityEngine.TestRunner.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-2db8793ec6d03484ca48d64a2af9a722
+# Starting compiling UnityEngine.UI.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-7df007d73f73948a4a51f89131d97581
+# Starting compiling PhotonChat.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-dc40ff30dabe44139be55ef90f8d842f
+# Starting compiling Unity.InternalAPIEngineBridge.001.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-22581cce00bdb4caa8572409184707ab
+# Starting compiling Unity.2D.PixelPerfect.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-1845ee46177ca4c519e305ce071c149e
+# Starting compiling Unity.Timeline.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-aaaaee49ed5574039b09bc1ae86b46c5
+# Starting compiling PlayFab.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-81bb0c97d11ac4d1fb18d75780e3dffc
+# Starting compiling Unity.TextMeshPro.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-bac5269ddf99647d1ad128771b4c5640
+# Starting compiling PhotonRealtime.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-3c4eb76008b5749dda474473a601e74b
+# Starting compiling Unity.Mathematics.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-06a64e877ec2c48229815abe406b2368
+# Starting compiling Unity.2D.IK.Runtime.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-953b08c0969c44d92b37c10dd49bac2a
+# Starting compiling Unity.2D.Animation.Triangle.Runtime.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-e57ba8df384f846b3a6245aa6db50597
+# Starting compiling Unity.2D.Common.Runtime.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-7c502dbe705ed4557804996636312c76
+# Starting compiling PhotonUnityNetworking.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-621c0b12c3833402d8a2c2d3b6dce890
+# Starting compiling PhotonUnityNetworking.Utilities.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-159dc4b90b277478ba3594e1077b14a3
+# Starting compiling PhotonUnityNetworking.Demos.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-18a4cbc0eeb5f442c808a5ff22cde2b9
+# Starting compiling Unity.2D.Animation.Runtime.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-8fc5419a03f1a4e14a895874c4c6eb99
+# Starting compiling Unity.2D.SpriteShape.Runtime.dll
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-f9639b9476deb4e4c8f4b1a19d101ad2
 # Starting compiling Assembly-CSharp.dll
-/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-b4a9007003bfa49daa28caeb260df19a
+/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-1ba28b0379b2642a78821fa7ad514f31

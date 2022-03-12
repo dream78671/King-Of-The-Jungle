@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public GameState State;
     [SerializeField] private Canvas Overlay; 
     [SerializeField] private TextMeshProUGUI MessageText;
+    [SerializeField] private Canvas TimerOverlay;
+    [SerializeField] private TextMeshProUGUI TimerText;
     public static event Action<GameState> OnGameStateChanged;
 
     public enum GameState { Start, Wait, HostTurn, NotHostTurn, Victory, Lose }
@@ -36,7 +38,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public float spawn2y;
 
     private bool nextTurnHost = true;
-    private int timePerMove = 6;
+    private float timePerMove = 15f;
+    private bool activeTimer = false;
+    private float currentTime = 0f;
 
     private void Awake()
     {
@@ -50,6 +54,23 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         Instance = this;
         UpdateGameState(GameState.Wait);
 
+    }
+
+    private void Update()
+    {
+        if (!activeTimer)
+        {
+            TimerOverlay.gameObject.SetActive(false);
+            return;
+        }
+        else
+            TimerOverlay.gameObject.SetActive(true);
+
+        currentTime -= 1 * Time.deltaTime;
+        TimerText.text = currentTime.ToString("0");
+
+        if (currentTime <= 0)
+            activeTimer = false;
     }
 
     //Needed for event calls
@@ -135,7 +156,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
         //Raise Event - Event sent to all listeners
         PhotonNetwork.RaiseEvent(TURN_CHANGE, MasterTurn, raiseEventOptions, SendOptions.SendReliable);
+        activeTimer = true;
+        currentTime = timePerMove;
         yield return new WaitForSeconds(timePerMove);
+        activeTimer = false;
 
         PhotonNetwork.RaiseEvent(TURN_CHANGE, DisableAll, raiseEventOptions, SendOptions.SendReliable);
         UpdateGameState(GameState.Wait);
@@ -148,7 +172,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
         //Raise event - Event sent to all listeners
         PhotonNetwork.RaiseEvent(TURN_CHANGE, NotMasterTurn, raiseEventOptions, SendOptions.SendReliable);
+        activeTimer = true;
+        currentTime = timePerMove;
         yield return new WaitForSeconds(timePerMove);
+        activeTimer = false;
 
         PhotonNetwork.RaiseEvent(TURN_CHANGE, DisableAll, raiseEventOptions, SendOptions.SendReliable);
         UpdateGameState(GameState.Wait);

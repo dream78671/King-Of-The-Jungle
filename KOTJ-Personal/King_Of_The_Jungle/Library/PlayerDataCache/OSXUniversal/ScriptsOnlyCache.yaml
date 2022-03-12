@@ -1527,7 +1527,7 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: 9ed37072803e438e816be3cffcbad958
+      Hash: bf4117e5a1336a70529a8ca866f8836b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
