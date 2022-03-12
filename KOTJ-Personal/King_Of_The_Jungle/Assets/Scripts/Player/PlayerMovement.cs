@@ -30,10 +30,15 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (!Player.canMove)
+        {
+            anim.GetComponent<Animator>().enabled = false;
             return;
-
+        }
+            
         if (!PV.IsMine)
             return;
+
+        anim.GetComponent<Animator>().enabled = true;
 
         float horizontalInput = Input.GetAxis("Horizontal"); //Store horizontal Input (-1, 0 ,1)
 
