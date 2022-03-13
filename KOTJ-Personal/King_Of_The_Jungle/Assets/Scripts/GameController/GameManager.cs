@@ -95,11 +95,23 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         if (scene.buildIndex == 2 && PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn1x, spawn1y, -8), Quaternion.identity);
+            GameObject player1 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn1x, spawn1y, -8), Quaternion.identity);
+            player1.name = "MasterPlayer1";
+            GameObject player2 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn1x + 1, spawn1y, -8), Quaternion.identity);
+            player2.name = "MasterPlayer2";
+            GameObject player3 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn1x + 2, spawn1y, -8), Quaternion.identity);
+            player3.name = "MasterPlayer3";
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerSelector"), new Vector3(0, 0, 0), Quaternion.identity, 0);
         }
         else if (scene.buildIndex == 2 && !PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn2x, spawn2y, -8), Quaternion.identity);
+            GameObject player1 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn2x, spawn2y, -8), Quaternion.identity);
+            player1.name = "Player1";
+            GameObject player2 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn2x - 1, spawn2y, -8), Quaternion.identity);
+            player2.name = "Player2";
+            GameObject player3 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn2x - 2, spawn2y, -8), Quaternion.identity);
+            player3.name = "Player3";
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerSelector"), new Vector3(0, 0, 0), Quaternion.identity, 0);
         }
     }
 

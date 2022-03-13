@@ -43,16 +43,30 @@ public class GunMechanics : MonoBehaviourPunCallbacks
         if (!ItemHolder.activeInHierarchy)
             ItemHolder.SetActive(true);
 
-        //Check numbers to see if gun switched
-        for(int i = 0; i < items.Length; i++)
+        //Switch to next/previous gun
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown((i + 1).ToString()))
-            {
-                EquipItem(i);
-                break;
-            }
+            if (itemIndex == -1)
+                itemIndex = 0;
+            else if (itemIndex + 1 > items.Length - 1)
+                itemIndex = 0;
+            else
+                itemIndex += 1;
+
+            EquipItem(itemIndex);
         }
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (itemIndex == -1)
+                itemIndex = 0;
+            else if (itemIndex - 1 < 0)
+                itemIndex = items.Length - 1;
+            else
+                itemIndex -= 1;
+
+            EquipItem(itemIndex);
+        }
 
         //MousePos - Relative to whole screen, Direction - Relative to Player
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -116,25 +130,6 @@ public class GunMechanics : MonoBehaviourPunCallbacks
             items[previousItemIndex].itemGameObject.SetActive(false);
 
         previousItemIndex = itemIndex;
-
-
-        //If the view is mine, set my custom props to this index - hashtable used as thats how custom props are stored
-        if (PV.IsMine)
-        {
-            Hashtable hash = new Hashtable();
-            hash.Add("itemIndex", itemIndex);
-            PhotonNetwork.LocalPlayer.SetCustomProperties(hash); 
-        }
-
     }
-
-    //Called whenever customProps of any player changes
-    public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
-    {
-        //If the view isn't mine and the target player is the owner of the item change, set their custom props locally
-        if (!PV.IsMine && targetPlayer == PV.Owner)
-            EquipItem((int)changedProps["itemIndex"]); 
-    }
-
 
 }

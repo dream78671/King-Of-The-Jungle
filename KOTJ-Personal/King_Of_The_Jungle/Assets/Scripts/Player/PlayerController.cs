@@ -13,12 +13,17 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
 
     private Rigidbody2D body;
     private PhotonView PV;
+    private PlayerSelector PlayerChange;
 
-    [SerializeField] Slider slider; 
-    
+    [SerializeField] Slider slider;
+    [SerializeField] Canvas ActiveIcon;
+    [SerializeField] Canvas Crown; 
+
     public bool canMove = false;
-    public bool canShoot = false; 
+    public bool canShoot = false;
+
     private bool master;
+    public int playerNum = 0;
 
     private const float maxHealth = 100;
     public float health;
@@ -40,12 +45,17 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     {
         body = GetComponent<Rigidbody2D>(); //Gets component from game object from inspector tab
         PV = GetComponent<PhotonView>();
-        gameObject.tag = "Player";
 
         if (PV.IsMine && PhotonNetwork.IsMasterClient)
+        {
             master = true;
+            gameObject.tag = "MasterPlayer";
+        }
         else
+        {
             master = false;
+            gameObject.tag = "Player";
+        }
 
         if (!PV.IsMine)
         {
@@ -58,6 +68,19 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         if (!PV.IsMine)
             return;
 
+        //Does not work in awake - Getting player number if not already set
+        if (playerNum == 0)
+        {
+            string name = gameObject.name;
+            playerNum = int.Parse(name.Substring(name.Length - 1));
+            if (playerNum != 1)
+                Crown.gameObject.SetActive(false);
+        }
+
+        //Fetching playerselector component
+        if (PlayerChange == null)
+            PlayerChange = GameObject.FindGameObjectWithTag("PlayerSelector").GetComponent<PlayerSelector>();
+
         //Needs to check even if player cannot move
         if (health <= 0)
             Die();
@@ -65,9 +88,21 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         if (!canMove)
         {
             canShoot = false; //Just to ensure it is false when player cannot move
+            ActiveIcon.gameObject.SetActive(false);
             return;
         }
-        
+
+        ActiveIcon.gameObject.SetActive(true);
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (Input.GetKeyDown((i + 1).ToString()))
+            {
+                PlayerChange.ChangePlayer(i);
+                break;
+            }
+        }
+
     }
 
 
@@ -80,15 +115,26 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
             object[] data = (object[])photonEvent.CustomData;
 
             //Index 0 - Master, Index 1 - Other Player
-            if (master)
+            if (master && playerNum == 1) //PlayerNum == 1 - refers to KING
             {
                 canMove = (bool)data[0];
                 canShoot = (bool)data[0];
             }
-            else
+            else if (master && playerNum != 1)
+            {
+                canMove = false;
+                canShoot = false;
+            }
+            else if (playerNum == 1)
             {
                 canMove = (bool)data[1];
-                canShoot= (bool)data[1];
+                canShoot = (bool)data[1];
+                PlayerChange.ChangePlayer(PlayerChange.NextUsablePlayer());
+            }
+            else if (playerNum != 1)
+            {
+                canMove = false;
+                canShoot = false;
             }
         }
     }
@@ -108,8 +154,12 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
 
     void Die()
     {
-        object[] winner = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString()};
-        PhotonNetwork.RaiseEvent(WINNER, winner, raiseEventOptions, SendOptions.SendReliable);
+        if(playerNum == 1)
+        {
+            object[] winner = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString() };
+            PhotonNetwork.RaiseEvent(WINNER, winner, raiseEventOptions, SendOptions.SendReliable);
+        }
+        PhotonNetwork.Destroy(gameObject);
     }
 
 }

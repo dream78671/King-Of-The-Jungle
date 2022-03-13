@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,10 +53,8 @@
     <UnityVersion>2020.3.20f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
     <Compile Include="Assets/Photon/PhotonLibs/WebSocket/WebSocket.cs" />
     <Compile Include="Assets/Scripts/Networking/ConnectManager.cs" />
     <Compile Include="Assets/Scripts/Networking/ChatManager.cs" />
@@ -75,7 +73,7 @@
     <Compile Include="Assets/Scripts/GameController/GameManager.cs" />
     <Compile Include="Assets/Scripts/Player/GunRelated/GunInfo.cs" />
     <Compile Include="Assets/Scripts/Networking/NameInputField.cs" />
-    <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
