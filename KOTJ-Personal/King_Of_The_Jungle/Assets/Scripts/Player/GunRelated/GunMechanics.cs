@@ -6,42 +6,51 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 using System.IO;
 using Photon.Realtime;
 
-public class GunMechanics : MonoBehaviourPunCallbacks
+public class GunMechanics : MonoBehaviourPunCallbacks, IPunObservable
 {
     [SerializeField] private GameObject ItemHolder;
     [SerializeField] private Transform Gun;
     [SerializeField] private Transform ShootPoint;
     [SerializeField] Item[] items;
 
-    private int itemIndex = -1;
-    private int previousItemIndex = -1; 
+    private int itemIndex = 0;
+    private int previousItemIndex = -1;
 
     private PlayerController LocalPlayer;
 
-    private float ProjectileSpeed = 1000; 
+    private float ProjectileSpeed = 1000;
     Vector2 direction;
-    int dirMultiplier; 
+    int dirMultiplier;
+    Vector2 netDir;
 
     PhotonView PV;
+
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(Gun.transform.rotation);
+        }
+        else if (stream.IsReading)
+        {
+            Gun.transform.rotation = (Quaternion)stream.ReceiveNext();
+        }
+    }
 
     void Start()
     {
         PV = GetComponent<PhotonView>();
-        LocalPlayer = GetComponent<PlayerController>(); 
+        LocalPlayer = GetComponent<PlayerController>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (!PV.IsMine || !LocalPlayer.canShoot)
+        if (!LocalPlayer.canShoot)
         {
-            ItemHolder.SetActive(false);
-            return; 
+            return;
         }
-
-        if (!ItemHolder.activeInHierarchy)
-            ItemHolder.SetActive(true);
 
         //Switch to next/previous gun
         if (Input.GetKeyDown(KeyCode.E))
@@ -72,16 +81,16 @@ public class GunMechanics : MonoBehaviourPunCallbacks
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = mousePos - (Vector2)Gun.position;
 
-        if(CheckValidDirection())
+        if (CheckValidDirection())
             FaceMouse();
 
-        if (Input.GetMouseButtonDown(0) && LocalPlayer.canShoot && itemIndex != -1)
+        if (Input.GetMouseButtonDown(0) && LocalPlayer.canShoot && itemIndex != 0)
         {
             items[itemIndex].Use(dirMultiplier);
             LocalPlayer.canShoot = false;
             if (itemIndex != 0)
             {
-                LocalPlayer.canMove = false; 
+                LocalPlayer.canMove = false;
             }
         }
     }
@@ -99,7 +108,7 @@ public class GunMechanics : MonoBehaviourPunCallbacks
             dirMultiplier = -1;
             Gun.transform.right = dirMultiplier * direction;
         }
-            
+
     }
 
     //Checks if gun is pointed in the same direction as player
@@ -115,8 +124,8 @@ public class GunMechanics : MonoBehaviourPunCallbacks
     }
 
     //Equip player weapon
-    
-    void EquipItem(int _index)
+
+    public void EquipItem(int _index)
     {
         //If the player is trying to switch to the weapon already equipped return
         if (_index == previousItemIndex)
@@ -124,30 +133,28 @@ public class GunMechanics : MonoBehaviourPunCallbacks
 
         itemIndex = _index;
 
-        items[itemIndex].itemGameObject.SetActive(true);
+        ShowItem(itemIndex, true);
 
         //If the previous item is showing, hide the gameObject
         if (previousItemIndex != -1)
-            items[previousItemIndex].itemGameObject.SetActive(false);
+            ShowItem(previousItemIndex, false);
 
         previousItemIndex = itemIndex;
+
+        Debug.Log("Current index");
     }
 
-    //void RPC_EquipItem(int _index)
-    //{
-    //    //If the player is trying to switch to the weapon already equipped return
-    //    if (_index == previousItemIndex)
-    //        return;
+    public void ShowItem(int index, bool show)
+    {
+        PV.RPC("RPC_ShowItem", RpcTarget.All, index, show);
+    }
 
-    //    itemIndex = _index;
-
-    //    items[itemIndex].itemGameObject.SetActive(true);
-
-    //    //If the previous item is showing, hide the gameObject
-    //    if (previousItemIndex != -1)
-    //        items[previousItemIndex].itemGameObject.SetActive(false);
-
-    //    previousItemIndex = itemIndex;
-    //}
+    [PunRPC]
+    void RPC_ShowItem(int index, bool show)
+    {
+        items[index].itemGameObject.SetActive(show);
+    }
 
 }
+
+

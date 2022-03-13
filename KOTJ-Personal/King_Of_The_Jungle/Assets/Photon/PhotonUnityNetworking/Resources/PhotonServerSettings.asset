@@ -49,6 +49,9 @@ MonoBehaviour:
   - RPC_ChangeCrownState
   - RPC_ChangeActiveIconState
   - RPC_WearCrown
+  - RPC_EquipItem
+  - RPC_ShowItemHolder
+  - RPC_ShowItem
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
