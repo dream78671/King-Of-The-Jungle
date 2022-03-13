@@ -1,21 +1,16 @@
 ﻿<Properties StartupConfiguration="{9E0096D7-246E-F154-0D45-F282C95928F6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/GunRelated/GunMechanics.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController/GameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Networking/ConnectManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="141" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="25" Column="51" />
-      <File FileName="Assets/Scripts/GameController/GameManager.cs" Line="222" Column="6" />
-      <File FileName="Assets/Scripts/Player/GunMechanics.cs" Line="21" Column="32" />
-      <File FileName="Assets/Scripts/Player/PlayerSelector.cs" Line="37" Column="1" />
-      <File FileName="Assets/Scripts/Player/GunRelated/Projectile.cs" Line="25" Column="1" />
-      <File FileName="Assets/Scripts/Player/GunRelated/GunMechanics.cs" Line="50" Column="55" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="20" Column="17" />
+      <File FileName="Assets/Scripts/GameController/GameManager.cs" Line="12" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7ef63ab3-7fed-46d1-8170-9e3bc2b7045a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bdea1a2e-8935-444b-9015-96dfe77615cf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.PhotonChat.Player PreferredExecutionTarget="7ef63ab3-7fed-46d1-8170-9e3bc2b7045a" />
 </Properties>

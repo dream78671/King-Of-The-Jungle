@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - GunInfo
     - GunMechanics
     - LoginUI_Manager
+    - MainMenu
     - NameInputField
     - PlayerController
     - PlayerMovement
@@ -42,10 +43,9 @@ ScriptsOnlyBuild:
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     - UnityEditor.U2D.IK.IKGizmos
-    Unity.2D.IK.Runtime.dll:
-    - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -80,6 +80,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
@@ -87,9 +88,11 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/ConnectLobby.unity:
     - Class: 1
@@ -236,6 +239,67 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1490}
+    - Class: 114
+      Script: {instanceID: 1494}
+    - Class: 114
+      Script: {instanceID: 1616}
+    - Class: 114
+      Script: {instanceID: 1740}
+    - Class: 114
+      Script: {instanceID: 1944}
+    - Class: 114
+      Script: {instanceID: 2582}
+    - Class: 114
+      Script: {instanceID: 2872}
+    - Class: 114
+      Script: {instanceID: 3052}
+    - Class: 114
+      Script: {instanceID: 3104}
+    - Class: 114
+      Script: {instanceID: 3600}
+    - Class: 114
+      Script: {instanceID: 3722}
+    - Class: 114
+      Script: {instanceID: 4234}
+    - Class: 114
+      Script: {instanceID: 4660}
+    - Class: 114
+      Script: {instanceID: 5250}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 23
       Script: {instanceID: 0}
     - Class: 28
@@ -260,6 +324,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
     - Class: 91
@@ -272,6 +340,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1488}
     - Class: 114
       Script: {instanceID: 1490}
+    - Class: 114
+      Script: {instanceID: 1492}
     - Class: 114
       Script: {instanceID: 1494}
     - Class: 114
@@ -301,8 +371,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2520}
     - Class: 114
-      Script: {instanceID: 2582}
-    - Class: 114
       Script: {instanceID: 2594}
     - Class: 114
       Script: {instanceID: 2872}
@@ -317,17 +385,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3596}
     - Class: 114
+      Script: {instanceID: 3598}
+    - Class: 114
       Script: {instanceID: 3600}
     - Class: 114
       Script: {instanceID: 3722}
-    - Class: 114
-      Script: {instanceID: 4234}
     - Class: 114
       Script: {instanceID: 4374}
     - Class: 114
       Script: {instanceID: 4648}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 4650}
     - Class: 114
       Script: {instanceID: 4830}
     - Class: 114
@@ -342,8 +410,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5132}
     - Class: 114
       Script: {instanceID: 5134}
-    - Class: 114
-      Script: {instanceID: 5250}
     - Class: 114
       Script: {instanceID: 5284}
     - Class: 114
@@ -360,6 +426,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 27164}
     - Class: 114
       Script: {instanceID: 27170}
+    - Class: 114
+      Script: {instanceID: 82724}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -391,6 +459,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -489,12 +563,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
-  - hash:
-      serializedVersion: 2
-      Hash: d1b036fbe5adcfe372c77a9d812c7e37
-    assemblyName: Unity.2D.IK.Runtime.dll
-    namespaceName: UnityEditor.U2D.IK
-    className: IKEditorManagerHelper
   - hash:
       serializedVersion: 2
       Hash: c656dcc13ae391b68d594cc8f9c590b0
@@ -1827,8 +1895,15 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSelector
+  - hash:
+      serializedVersion: 2
+      Hash: d835e37be8caf473a0d64dc941f2a2a8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
   platform: 2
   scenePathNames:
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Login.unity
   - Assets/Scenes/ConnectLobby.unity
   - Assets/Scenes/Game1.unity

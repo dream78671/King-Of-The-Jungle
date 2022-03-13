@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     //If scene has loaded, Create a new playerManager object for each player - sceneIndex 2 refers to map 1 (sceneIndex is the scene order in build settings)
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if (scene.buildIndex == 2 && PhotonNetwork.IsMasterClient)
+        if (scene.buildIndex == 3 && PhotonNetwork.IsMasterClient)
         {
             GameObject player1 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn1x, spawn1y, -8), Quaternion.identity);
             player1.name = "MasterPlayer1";
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             player3.name = "MasterPlayer3";
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerSelector"), new Vector3(0, 0, 0), Quaternion.identity, 0);
         }
-        else if (scene.buildIndex == 2 && !PhotonNetwork.IsMasterClient)
+        else if (scene.buildIndex == 3 && !PhotonNetwork.IsMasterClient)
         {
             GameObject player1 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(spawn2x, spawn2y, -8), Quaternion.identity);
             player1.name = "Player1";
