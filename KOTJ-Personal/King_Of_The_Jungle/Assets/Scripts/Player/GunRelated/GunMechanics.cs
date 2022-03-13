@@ -115,6 +115,7 @@ public class GunMechanics : MonoBehaviourPunCallbacks
     }
 
     //Equip player weapon
+    
     void EquipItem(int _index)
     {
         //If the player is trying to switch to the weapon already equipped return
@@ -131,5 +132,22 @@ public class GunMechanics : MonoBehaviourPunCallbacks
 
         previousItemIndex = itemIndex;
     }
+
+    //void RPC_EquipItem(int _index)
+    //{
+    //    //If the player is trying to switch to the weapon already equipped return
+    //    if (_index == previousItemIndex)
+    //        return;
+
+    //    itemIndex = _index;
+
+    //    items[itemIndex].itemGameObject.SetActive(true);
+
+    //    //If the previous item is showing, hide the gameObject
+    //    if (previousItemIndex != -1)
+    //        items[previousItemIndex].itemGameObject.SetActive(false);
+
+    //    previousItemIndex = itemIndex;
+    //}
 
 }

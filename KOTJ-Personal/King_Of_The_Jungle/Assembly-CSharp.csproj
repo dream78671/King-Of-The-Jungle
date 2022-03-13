@@ -63,7 +63,7 @@
     <Compile Include="Assets/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs" />
     <Compile Include="Assets/Scripts/Player/GunRelated/ItemInfo.cs" />
     <Compile Include="Assets/Scripts/Player/GunRelated/Gun.cs" />
-    <Compile Include="Assets/Scripts/Player/GunMechanics.cs" />
+    <Compile Include="Assets/Scripts/Player/GunRelated/GunMechanics.cs" />
     <Compile Include="Assets/Scripts/Player/IDamageable.cs" />
     <Compile Include="Assets/Scripts/Networking/TestLobbyJoin.cs" />
     <Compile Include="Assets/Scripts/Player/GunRelated/Item.cs" />

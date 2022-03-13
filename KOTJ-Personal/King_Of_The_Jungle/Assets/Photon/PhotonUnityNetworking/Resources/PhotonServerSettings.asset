@@ -44,6 +44,11 @@ MonoBehaviour:
   - RPC_TakeDamage
   - RPC_UpdateHealthBar
   - RPC_EquipItemToPlayer
+  - RPC_ChangeIconState
+  - RPC_DestroyProjectile
+  - RPC_ChangeCrownState
+  - RPC_ChangeActiveIconState
+  - RPC_WearCrown
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

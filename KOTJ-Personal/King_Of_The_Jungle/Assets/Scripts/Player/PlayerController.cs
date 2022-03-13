@@ -73,8 +73,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         {
             string name = gameObject.name;
             playerNum = int.Parse(name.Substring(name.Length - 1));
-            if (playerNum != 1)
-                Crown.gameObject.SetActive(false);
+            if (playerNum == 1)
+                WearCrown(true);
         }
 
         //Fetching playerselector component
@@ -102,7 +102,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
                 break;
             }
         }
-
     }
 
 
@@ -119,6 +118,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
             {
                 canMove = (bool)data[0];
                 canShoot = (bool)data[0];
+                PlayerChange.ChangePlayer(0);
             }
             else if (master && playerNum != 1)
             {
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
             {
                 canMove = (bool)data[1];
                 canShoot = (bool)data[1];
-                PlayerChange.ChangePlayer(PlayerChange.NextUsablePlayer());
+                PlayerChange.ChangePlayer(0);
             }
             else if (playerNum != 1)
             {
@@ -150,6 +150,17 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     {
         health -= damage;
         slider.value = 1 - (health / maxHealth);
+    }
+
+    public void WearCrown(bool wear)
+    {
+        PV.RPC("RPC_WearCrown", RpcTarget.All, wear);
+    }
+
+    [PunRPC]
+    void RPC_WearCrown(bool wear)
+    {
+        Crown.gameObject.SetActive(wear);
     }
 
     void Die()
