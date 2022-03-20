@@ -885,3 +885,90 @@ Received Import Request.
   path: Assets/Scenes/Game1.unity
   artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Game1.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b15c47212a461d4da38de4ff8fc28cd') in 0.003930 seconds 
+========================================================================
+Received Prepare
+Default GameObject BitMask: UI already registered
+Registering precompiled user dll's ...
+Registered in 0.001457 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.400 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2401ms)
+		BeginReloadAssembly (214ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (38ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (82ms)
+		EndReloadAssembly (2095ms)
+			LoadAssemblies (163ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (364ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (1203ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (250ms)
+				ProcessInitializeOnLoadAttributes (896ms)
+				ProcessInitializeOnLoadMethodAttributes (42ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (46ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2533 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 254.6 MB.
+System memory in use after: 254.8 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3087.
+Total: 2.278000 ms (FindLiveObjects: 0.098542 ms CreateObjectMapping: 0.050417 ms MarkObjects: 2.107917 ms  DeleteObjects: 0.020416 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 310.542462 seconds.
+  path: Assets/Resources/CustomAssets
+  artifactKey: Guid(e607e550140cf45b4a50d12de4a220e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/CustomAssets using Guid(e607e550140cf45b4a50d12de4a220e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7c79169ca9a5baf3eb885b2be4f57cf') in 0.010246 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.086000 seconds.
+  path: Assets/Resources/CustomAssets/PistolInventoryBlock.png
+  artifactKey: Guid(1209023bc45a44fa0981188ebcc504a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/CustomAssets/PistolInventoryBlock.png using Guid(1209023bc45a44fa0981188ebcc504a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c18f7cb6853e2028351cb1d85db0680') in 0.530819 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Resources/CustomAssets/RocketLauncherInventoryBlock.png
+  artifactKey: Guid(0726e359c21a040a8a1cc9a869660231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/CustomAssets/RocketLauncherInventoryBlock.png using Guid(0726e359c21a040a8a1cc9a869660231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01553d27baf06cdedbcbe4211b179e1e') in 0.011192 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Resources/CustomAssets/SniperInventoryBlock.png
+  artifactKey: Guid(eefcecea644d64036bc0e519e7c67cd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/CustomAssets/SniperInventoryBlock.png using Guid(eefcecea644d64036bc0e519e7c67cd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54113bde38ac2999a60b76178981d3a2') in 0.008067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Resources/CustomAssets/ShotgunInventoryBlockV2.png
+  artifactKey: Guid(be540a17c7cff4fffaab19bf896bdbd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/CustomAssets/ShotgunInventoryBlockV2.png using Guid(be540a17c7cff4fffaab19bf896bdbd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd53b68538825936581d289d3d03130a7') in 0.008118 seconds 
