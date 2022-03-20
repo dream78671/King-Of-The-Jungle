@@ -8,6 +8,7 @@ using System;
 using TMPro;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
@@ -24,9 +25,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public static GameManager Instance;
     public GameState State;
     [SerializeField] private Canvas Overlay; 
-    [SerializeField] private TextMeshProUGUI MessageText;
+    [SerializeField] private Text MessageText;
     [SerializeField] private Canvas TimerOverlay;
-    [SerializeField] private TextMeshProUGUI TimerText;
+    [SerializeField] private Text TimerText;
     public static event Action<GameState> OnGameStateChanged;
 
     public enum GameState { Start, Wait, HostTurn, NotHostTurn, Victory, Lose }

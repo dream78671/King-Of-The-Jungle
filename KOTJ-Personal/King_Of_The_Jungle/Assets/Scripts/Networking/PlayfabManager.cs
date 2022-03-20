@@ -5,15 +5,16 @@ using PlayFab;
 using PlayFab.ClientModels;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayfabManager : MonoBehaviour
 {
-    public TextMeshProUGUI messageText;
-    public TMP_InputField RegisterEmailInput;
-    public TMP_InputField RegisterPasswordInput;
-    public TMP_InputField RegisterUsernameInput;
-    public TMP_InputField LoginEmailInput;
-    public TMP_InputField LoginPasswordInput;
+    public Text messageText;
+    public InputField RegisterEmailInput;
+    public InputField RegisterPasswordInput;
+    public InputField RegisterUsernameInput;
+    public InputField LoginEmailInput;
+    public InputField LoginPasswordInput;
 
     private string localID = "NotSet";
 

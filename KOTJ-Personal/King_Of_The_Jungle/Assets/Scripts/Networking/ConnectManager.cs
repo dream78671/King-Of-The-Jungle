@@ -4,12 +4,13 @@ using UnityEngine;
 using Photon.Pun;
 using TMPro;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 public class ConnectManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject ConnectPanel;
     [SerializeField] private GameObject StartGameButton;
-    [SerializeField] private TextMeshProUGUI StatusText;
+    [SerializeField] private Text StatusText;
 
     private bool isConnecting = false;
     private const string gameVersion = "1.0";
