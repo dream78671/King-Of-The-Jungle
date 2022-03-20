@@ -223,7 +223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 550}
+  m_AnchoredPosition: {x: 17, y: 700}
   m_SizeDelta: {x: 85.3693, y: 83.4497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186547881
@@ -302,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 550}
+  m_AnchoredPosition: {x: 17, y: 700}
   m_SizeDelta: {x: 163.1404, y: 102.7452}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &383262650
@@ -26940,13 +26940,25 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1318547200
+--- !u!1001 &847347410
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1388706300403782344, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933321596565874324, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933321596565874325, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7933321597217448769, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -27033,7 +27045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7933321597217448830, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: PauseMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}

@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - LoginUI_Manager
     - MainMenu
     - NameInputField
+    - PauseMenu
     - PlayerController
     - PlayerMovement
     - PlayerSelector
@@ -25,8 +26,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -86,7 +85,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.InputField
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
-    - UnityEngine.UI.RawImage
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
@@ -139,7 +137,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5412}
     - Class: 114
-      Script: {instanceID: 6112}
+      Script: {instanceID: 6114}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -211,6 +209,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5292}
     - Class: 114
       Script: {instanceID: 5430}
+    - Class: 114
+      Script: {instanceID: 5878}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -258,8 +258,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1492}
     - Class: 114
       Script: {instanceID: 1496}
-    - Class: 114
-      Script: {instanceID: 2618}
     - Class: 114
       Script: {instanceID: 2918}
     - Class: 114
@@ -416,17 +414,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5448}
     - Class: 114
-      Script: {instanceID: 5882}
+      Script: {instanceID: 5878}
     - Class: 114
       Script: {instanceID: 5884}
     - Class: 114
-      Script: {instanceID: 6076}
+      Script: {instanceID: 5886}
     - Class: 114
-      Script: {instanceID: 6098}
+      Script: {instanceID: 6078}
     - Class: 114
-      Script: {instanceID: 6544}
+      Script: {instanceID: 6100}
     - Class: 114
-      Script: {instanceID: 27892}
+      Script: {instanceID: 6546}
+    - Class: 114
+      Script: {instanceID: 28968}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1708,6 +1708,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: CrcCheckToggle
+  - hash:
+      serializedVersion: 2
+      Hash: c8c5e65e9fb858572516474d6e2102bc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PauseMenu
   - hash:
       serializedVersion: 2
       Hash: adb92691ab0496634b4241d3545a0010

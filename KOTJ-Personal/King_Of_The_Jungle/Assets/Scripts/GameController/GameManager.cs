@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     //Turn Change Variables
     private const int TURN_CHANGE = 1;
     private const int WINNER = 2;
+    private const int QUIT = 3;
     object[] NotMasterTurn = new object[] { false, true }; //MasterClient Disabled, Other Enabled
     object[] MasterTurn = new object[] { true, false }; //MasterClient Enabled, Other Disabled
     object[] DisableAll = new object[] { false, false }; //MasterClient Enabled, Other Disabled
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     [SerializeField] private Canvas TimerOverlay;
     [SerializeField] private Text TimerText;
     public static event Action<GameState> OnGameStateChanged;
+    private string message; 
 
     public enum GameState { Start, Wait, HostTurn, NotHostTurn, Victory, Lose }
 
@@ -207,10 +209,20 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             StopAllCoroutines();
             object[] data = (object[])photonEvent.CustomData;
-            //Index 0 - Master, Index 1 - Other Player
+            //Index 0 - PLayer calling event, Index 1 - Other Player
             winner = data[1].ToString();
             UpdateGameState(GameState.Victory);
+        } else if (photonEvent.Code == QUIT)
+        {
+            StopAllCoroutines();
+            object[] data = (object[])photonEvent.CustomData;
+            //Index 0 - PLayer calling event, Index 1 - Other Player
+            winner = data[1].ToString();
+            message = "Enemy Quit!";
+            UpdateGameState(GameState.Victory);
         }
+
+
     }
 
     //Show pop up message in game - text = msg shown, time = length of msg popup

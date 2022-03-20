@@ -3,7 +3,7 @@
     <Files>
       <File FileName="Assets/Scripts/PauseMenu.cs" Line="49" Column="38" />
       <File FileName="Assets/Scripts/Player/PlayerController.cs" />
-      <File FileName="Assets/Scripts/GameController/GameManager.cs" Line="27" Column="46" />
+      <File FileName="Assets/Scripts/GameController/GameManager.cs" />
       <File FileName="Assets/Scripts/Player/GunRelated/GunMechanics.cs" />
       <File FileName="Assets/Scripts/Player/GunRelated/SingleFireWeapon.cs" />
       <File FileName="Assets/Scripts/Player/GunRelated/Gun.cs" />
@@ -11,17 +11,10 @@
       <File FileName="Assets/Scripts/Networking/PlayfabManager.cs" />
       <File FileName="Assets/Scripts/Networking/ConnectManager.cs" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="King_Of_The_Jungle" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="78559fa4-40da-4fd1-9993-9bde9c98db25" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="800981c1-e9a2-42a2-a6ef-07bf98a81d9c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
