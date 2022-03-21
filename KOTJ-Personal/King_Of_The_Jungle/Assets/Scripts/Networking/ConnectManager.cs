@@ -15,6 +15,8 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     private bool isConnecting = false;
     private const string gameVersion = "1.0";
 
+    private string[] Maps = new string[] { "Game1", "Game2" }; 
+
     void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true; //Syncs master scene to everyone else
@@ -92,10 +94,11 @@ public class ConnectManager : MonoBehaviourPunCallbacks
         base.OnPlayerEnteredRoom(newPlayer);
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.IsMasterClient)
         {
+            string Level = Maps[Random.Range(0, 2)].ToString().Replace("'", "");
+            Debug.Log(Level);
             //Used instead of SceneManager.LoadScene, Using PhotonsLoadLevel ensures all players load into the new scene. Look at Awake()
-            PhotonNetwork.LoadLevel("Game1"); 
+            PhotonNetwork.LoadLevel(Level);
+            
         }
     }
-
-
 }

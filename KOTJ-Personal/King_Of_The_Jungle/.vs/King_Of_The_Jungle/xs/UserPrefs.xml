@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{9E0096D7-246E-F154-0D45-F282C95928F6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LoginUI_Manager.cs">
     <Files>
       <File FileName="Assets/Scripts/PauseMenu.cs" Line="73" Column="61" />
       <File FileName="Assets/Scripts/Player/PlayerController.cs" />
-      <File FileName="Assets/Scripts/GameController/GameManager.cs" Line="220" Column="45" />
+      <File FileName="Assets/Scripts/GameController/GameManager.cs" Line="115" Column="38" />
       <File FileName="Assets/Scripts/Player/GunRelated/GunMechanics.cs" />
-      <File FileName="Assets/Scripts/Player/GunRelated/SingleFireWeapon.cs" />
-      <File FileName="Assets/Scripts/Player/GunRelated/Gun.cs" />
+      <File FileName="Assets/Scripts/Player/GunRelated/SingleFireWeapon.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/GunRelated/Gun.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Player/GunRelated/Item.cs" />
-      <File FileName="Assets/Scripts/Networking/ConnectManager.cs" />
+      <File FileName="Assets/Scripts/Networking/ConnectManager.cs" Line="103" Column="6" />
       <File FileName="Assets/Scripts/Networking/PlayfabManager.cs" />
-      <File FileName="Assets/Scripts/Networking/PlayfabLeaderboardManager.cs" />
+      <File FileName="Assets/Scripts/Networking/PlayfabLeaderboardManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LoginUI_Manager.cs" Line="23" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
