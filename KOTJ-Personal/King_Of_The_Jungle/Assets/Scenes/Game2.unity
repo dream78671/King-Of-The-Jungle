@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MessageCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7099528446562813114, guid: 2a103cc5c0ce3454598140edd0ec3ae1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7099528446562813118, guid: 2a103cc5c0ce3454598140edd0ec3ae1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -20429,9 +20433,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 794735787819149484, guid: d72b26e1a377044be800d5083d07ba00, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 794735787819149485, guid: d72b26e1a377044be800d5083d07ba00, type: 3}
       propertyPath: m_Name
       value: TimerCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 794735787819149485, guid: d72b26e1a377044be800d5083d07ba00, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794735787819151184, guid: d72b26e1a377044be800d5083d07ba00, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 794735787819151191, guid: d72b26e1a377044be800d5083d07ba00, type: 3}
       propertyPath: m_Pivot.x
@@ -20516,6 +20532,14 @@ PrefabInstance:
     - target: {fileID: 794735787819151191, guid: d72b26e1a377044be800d5083d07ba00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794735789417686250, guid: d72b26e1a377044be800d5083d07ba00, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 794735789899613691, guid: d72b26e1a377044be800d5083d07ba00, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 450
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d72b26e1a377044be800d5083d07ba00, type: 3}

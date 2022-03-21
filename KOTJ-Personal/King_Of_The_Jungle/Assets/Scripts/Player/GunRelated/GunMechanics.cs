@@ -5,6 +5,7 @@ using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using System.IO;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 public class GunMechanics : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -12,6 +13,8 @@ public class GunMechanics : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField] private Transform Gun;
     [SerializeField] private Transform ShootPoint;
     [SerializeField] Item[] items;
+    [SerializeField] Canvas Hotbar; 
+    [SerializeField] GameObject[] HotbarItems;
 
     private int itemIndex = 0;
     private int previousItemIndex = -1;
@@ -49,8 +52,11 @@ public class GunMechanics : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (!LocalPlayer.canShoot)
         {
+            Hotbar.gameObject.SetActive(false);
             return;
         }
+
+        Hotbar.gameObject.SetActive(true);
 
         //Switch to next/previous gun
         if (Input.GetKeyDown(KeyCode.E))
@@ -134,10 +140,16 @@ public class GunMechanics : MonoBehaviourPunCallbacks, IPunObservable
         itemIndex = _index;
 
         ShowItem(itemIndex, true);
+        HotbarItems[itemIndex].gameObject.SetActive(true);
+
 
         //If the previous item is showing, hide the gameObject
         if (previousItemIndex != -1)
+        {
             ShowItem(previousItemIndex, false);
+            HotbarItems[previousItemIndex].gameObject.SetActive(false);
+        }
+            
 
         previousItemIndex = itemIndex;
 

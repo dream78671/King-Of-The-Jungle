@@ -47,7 +47,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -92,6 +91,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/ConnectLobby.unity:
     - Class: 1
@@ -137,6 +137,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3814}
     - Class: 114
+      Script: {instanceID: 4282}
+    - Class: 114
       Script: {instanceID: 5414}
     - Class: 114
       Script: {instanceID: 6116}
@@ -155,6 +157,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
     Assets/Scenes/Game1.unity:
     - Class: 1
@@ -835,7 +839,7 @@ ScriptsOnlyBuild:
     className: IngameControlPanel
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d779dfa8137f147eec9a43f2fa730ee8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayfabLeaderboardManager
@@ -1117,7 +1121,7 @@ ScriptsOnlyBuild:
     className: SplinePosition
   - hash:
       serializedVersion: 2
-      Hash: 0cf4bdcf39dc92cd3bb204494e724d43
+      Hash: fb6194b3d1c18844570bd3f6da1e915c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GunMechanics
