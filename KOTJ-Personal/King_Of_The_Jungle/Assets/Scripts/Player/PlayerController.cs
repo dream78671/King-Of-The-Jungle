@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
 
     private bool master;
     public int playerNum = 0;
+    private string playerName;
 
     private const float maxHealth = 100;
     public float health;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     {
         body = GetComponent<Rigidbody2D>(); //Gets component from game object from inspector tab
         PV = GetComponent<PhotonView>();
+        playerName = PlayerPrefs.GetString("PlayerName");
 
         if (PV.IsMine && PhotonNetwork.IsMasterClient)
         {
@@ -167,7 +169,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     {
         if(playerNum == 1)
         {
-            object[] winner = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString() };
+            object[] winner = new object[] { PhotonNetwork.NickName.Remove(0,4), PhotonNetwork.PlayerListOthers[0].ToString().Remove(0,4) };
             PhotonNetwork.RaiseEvent(WINNER, winner, raiseEventOptions, SendOptions.SendReliable);
         }
         PhotonNetwork.Destroy(gameObject);

@@ -15,7 +15,6 @@ public class PauseMenu : MonoBehaviourPunCallbacks, IOnEventCallback
     RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All }; //Send event to all clients
 
     public static bool GameIsPaused = false;
-
     public GameObject pauseMenuUI;
 
     //Needed for handling Events
@@ -29,6 +28,11 @@ public class PauseMenu : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         PhotonNetwork.RemoveCallbackTarget(this);
         PhotonNetwork.NetworkingClient.EventReceived -= OnEvent;
+    }
+
+    private void Awake()
+    {
+        
     }
 
     // Update is called once per frame
@@ -68,7 +72,7 @@ public class PauseMenu : MonoBehaviourPunCallbacks, IOnEventCallback
         //Time.timeScale = 1f;
         object[] quit = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString() };
         PhotonNetwork.RaiseEvent(QUIT, quit, raiseEventOptions, SendOptions.SendReliable);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("ConnectLobby");
     }
 
     public void QuitGame()
@@ -77,10 +81,12 @@ public class PauseMenu : MonoBehaviourPunCallbacks, IOnEventCallback
         object[] quit = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString() };
         PhotonNetwork.RaiseEvent(QUIT, quit, raiseEventOptions, SendOptions.SendReliable);
         Application.Quit();
+
+        
     }
 
     public void OnEvent(EventData photonEvent)
     {
-        Debug.Log("Do Nothing");
+        
     }
 }
