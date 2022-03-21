@@ -11,6 +11,9 @@ using System;
 public class PlayfabLeaderboardManager : MonoBehaviour
 {
 
+    public GameObject LeaderboardEntry;
+    public Transform TableParent;
+
     void OnError(PlayFabError error)
     {
         Debug.Log("Error while accessing Leaderboard");
@@ -50,8 +53,18 @@ public class PlayfabLeaderboardManager : MonoBehaviour
     }
 
     void OnLeaderboardGet(GetLeaderboardResult result) {
+        foreach (Transform item in TableParent){
+            Destroy(item.gameObject);
+        }
+
         foreach (var item in result.Leaderboard)
         {
+            GameObject newGo = Instantiate(LeaderboardEntry, TableParent);
+            Text[] text = newGo.GetComponentsInChildren<Text>();
+            text[0].text = (item.Position + 1).ToString();
+            text[1].text = item.DisplayName;
+            text[2].text = item.StatValue.ToString();
+
             Debug.Log(item.Position + " " + item.DisplayName + " " + item.StatValue);
         };
     }
