@@ -44,14 +44,13 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -78,6 +77,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -106,7 +106,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -138,6 +148,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3814}
     - Class: 114
       Script: {instanceID: 4282}
+    - Class: 114
+      Script: {instanceID: 4702}
     - Class: 114
       Script: {instanceID: 5414}
     - Class: 114
@@ -177,7 +189,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 66
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -211,6 +233,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3686}
     - Class: 114
       Script: {instanceID: 3814}
+    - Class: 114
+      Script: {instanceID: 4702}
     - Class: 114
       Script: {instanceID: 5048}
     - Class: 114
@@ -260,7 +284,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 66
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -294,6 +328,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3686}
     - Class: 114
       Script: {instanceID: 3814}
+    - Class: 114
+      Script: {instanceID: 4702}
     - Class: 114
       Script: {instanceID: 5048}
     - Class: 114
@@ -339,7 +375,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -361,6 +407,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3814}
     - Class: 114
       Script: {instanceID: 4348}
+    - Class: 114
+      Script: {instanceID: 4702}
     - Class: 114
       Script: {instanceID: 4794}
     - Class: 115
@@ -483,6 +531,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4502}
     - Class: 114
+      Script: {instanceID: 4702}
+    - Class: 114
       Script: {instanceID: 4782}
     - Class: 114
       Script: {instanceID: 4976}
@@ -515,7 +565,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6548}
     - Class: 114
-      Script: {instanceID: 29306}
+      Script: {instanceID: 28482}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2008,4 +2058,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/ConnectLobby.unity
   - Assets/Scenes/Game1.unity
   - Assets/Scenes/Game2.unity
-  playerPath: /Users/shakil/Documents/KOTJ_Build.app
+  playerPath: /Users/sully/Desktop/Game/King-Of-The-Jungle/KOTJ-Personal/King_Of_The_Jungle/GameBuild.app

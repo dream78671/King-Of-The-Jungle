@@ -36,8 +36,8 @@ public class ChatManager : MonoBehaviour, IChatClientListener
     [SerializeField] GameObject chatPanel;
     string privateReceiver = "";
     string currentChat;
-    [SerializeField] TMP_InputField chatField;
-    [SerializeField] TMP_Text chatDisplay;
+    [SerializeField] InputField chatField;
+    [SerializeField] Text chatDisplay;
 
     // Start is called before the first frame update
     void Start()
