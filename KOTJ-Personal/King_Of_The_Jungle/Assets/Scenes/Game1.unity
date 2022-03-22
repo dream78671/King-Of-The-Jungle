@@ -26817,7 +26817,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1388706300403782344, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837733013557843734, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455144480464468359, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588735369098793886, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7933321596565874324, guid: 5abc75eedc4ae48598e81ebddb6b1392, type: 3}
       propertyPath: m_Color.a
