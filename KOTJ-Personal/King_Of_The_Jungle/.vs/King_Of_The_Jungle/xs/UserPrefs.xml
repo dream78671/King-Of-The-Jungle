@@ -1,22 +1,30 @@
 ﻿<Properties StartupConfiguration="{9E0096D7-246E-F154-0D45-F282C95928F6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/GunRelated/SingleFireWeapon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Networking/ChatManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Networking/PlayfabLeaderboardManager.cs" IsPinned="True" />
       <File FileName="Assets/Scripts/PauseMenu.cs" Line="73" Column="61" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="54" Column="45" />
-      <File FileName="Assets/Scripts/GameController/GameManager.cs" Line="226" Column="42" />
-      <File FileName="Assets/Scripts/Player/GunRelated/GunMechanics.cs" Line="97" Column="63" />
-      <File FileName="Assets/Scripts/Networking/ConnectManager.cs" Line="70" Column="1" />
-      <File FileName="Assets/Scripts/Networking/PlayfabManager.cs" Line="47" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" />
+      <File FileName="Assets/Scripts/GameController/GameManager.cs" />
+      <File FileName="Assets/Scripts/Player/GunRelated/GunMechanics.cs" />
+      <File FileName="Assets/Scripts/Player/GunRelated/SingleFireWeapon.cs" />
+      <File FileName="Assets/Scripts/Player/GunRelated/Gun.cs" />
+      <File FileName="Assets/Scripts/Player/GunRelated/Item.cs" />
+      <File FileName="Assets/Scripts/Networking/ConnectManager.cs" />
+      <File FileName="Assets/Scripts/Networking/PlayfabManager.cs" />
+      <File FileName="Assets/Scripts/Networking/PlayfabLeaderboardManager.cs" />
       <File FileName="Assets/Scripts/LoginUI_Manager.cs" Line="23" Column="1" />
-      <File FileName="Assets/Scripts/Player/GunRelated/Projectile.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/Player/GunRelated/GunInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/GunRelated/SingleFireWeapon.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/Networking/ChatManager.cs" Line="40" Column="22" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="King_Of_The_Jungle" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7b03a4fb-7bab-450b-b982-de7b5c28c902" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f6dd5d1a-655c-4f28-a768-7f3f6f9d5243" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
