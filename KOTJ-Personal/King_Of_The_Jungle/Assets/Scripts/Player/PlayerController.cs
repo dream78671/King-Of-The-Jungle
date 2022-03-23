@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     {
         body = GetComponent<Rigidbody2D>(); //Gets component from game object from inspector tab
         PV = GetComponent<PhotonView>();
-        playerName = PlayerPrefs.GetString("PlayerName");
+        
 
         if (PV.IsMine && PhotonNetwork.IsMasterClient)
         {
@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         if (!PV.IsMine)
         {
             Destroy(body);
+        } else {
+            Debug.Log("PhotonNickname = " + PhotonNetwork.NickName); 
+            playerName = PlayerPrefs.GetString("PlayerName");
+            Debug.Log(playerName);
         }
     }
 
@@ -141,7 +145,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
         }
     }
 
-    
     public void TakeDamage(float damage)
     {
         PV.RPC("RPC_TakeDamage", RpcTarget.All, damage);
@@ -169,7 +172,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IOnEventCallback, IDa
     {
         if(playerNum == 1)
         {
-            object[] winner = new object[] { PhotonNetwork.NickName.Remove(0,4), PhotonNetwork.PlayerListOthers[0].ToString().Remove(0,4) };
+            object[] winner = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString() };
             PhotonNetwork.RaiseEvent(WINNER, winner, raiseEventOptions, SendOptions.SendReliable);
         }
         PhotonNetwork.Destroy(gameObject);

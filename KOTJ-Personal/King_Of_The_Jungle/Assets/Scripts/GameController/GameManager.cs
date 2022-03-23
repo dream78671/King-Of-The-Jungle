@@ -21,20 +21,21 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     object[] DisableAll = new object[] { false, false }; //MasterClient Enabled, Other Disabled
     RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All }; //Send event to all clients
 
-    private string winner;
-    private string[] charsToRemove = new string[] { "@", ",", ".", ";", "'" };
-
     public static GameManager Instance;
     public GameState State;
+
     [SerializeField] private GameObject SendLeaderboard;
     private PlayfabLeaderboardManager LeaderboardManager;
+
     [SerializeField] private Canvas Overlay; 
     [SerializeField] private Text MessageText;
     [SerializeField] private Text ExtraMessageText;
+
     [SerializeField] private Canvas TimerOverlay;
     [SerializeField] private Text TimerText;
     public static event Action<GameState> OnGameStateChanged;
-    private string message = ""; 
+    private string message = "";
+    private string winner;
 
     public enum GameState { Start, Wait, HostTurn, NotHostTurn, Victory, Lose }
 
@@ -105,24 +106,24 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            GameObject player1 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), P1Spawn1, Quaternion.identity);
-            player1.name = "MasterPlayer1";
-            GameObject player2 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), P1Spawn2, Quaternion.identity);
-            player2.name = "MasterPlayer2";
-            GameObject player3 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), P1Spawn3, Quaternion.identity);
-            player3.name = "MasterPlayer3";
+            InstantiatePlayer("MasterPlayer1", P1Spawn1);
+            InstantiatePlayer("MasterPlayer2", P1Spawn2);
+            InstantiatePlayer("MasterPlayer3", P1Spawn3);
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerSelector"), new Vector3(0, 0, 0), Quaternion.identity, 0);
         }// scene.buildIndex == 3 && 
         else if (!PhotonNetwork.IsMasterClient)
         {
-            GameObject player1 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), P2Spawn1, Quaternion.identity);
-            player1.name = "Player1";
-            GameObject player2 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), P2Spawn2, Quaternion.identity);
-            player2.name = "Player2";
-            GameObject player3 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), P2Spawn3, Quaternion.identity);
-            player3.name = "Player3";
+            InstantiatePlayer("Player1", P2Spawn1);
+            InstantiatePlayer("Player2", P2Spawn2);
+            InstantiatePlayer("Player3", P2Spawn3);
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerSelector"), new Vector3(0, 0, 0), Quaternion.identity, 0);
         }
+    }
+
+    private void InstantiatePlayer(string playerName, Vector3 spawn)
+    {
+        GameObject player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), spawn, Quaternion.identity);
+        player.name = playerName;
     }
 
     //Function to change GameStates
@@ -142,7 +143,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 StartCoroutine(NotHostTurn()); 
                 break;
             case GameState.Victory:
-                StartCoroutine(Victory());
+                Victory();
                 break;
 
             default:
@@ -203,10 +204,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         UpdateGameState(GameState.Wait);
     }
 
-    private IEnumerator Victory()
+    private void Victory()
     {
-        StartCoroutine(ShowMessage(winner + " WINS!", 10));
-        yield return new WaitForSeconds(10);
+        ShowMessage(winner + " WINS!");
     }
 
     public void OnEvent(EventData photonEvent)
@@ -217,9 +217,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             StopAllCoroutines();
             object[] data = (object[])photonEvent.CustomData;
             //Index 0 - PLayer calling event, Index 1 - Other Player
-            winner = data[1].ToString().Replace("'", "");
+            winner = data[1].ToString().Remove(0,4).Replace("'", "");
             message = data[0].ToString() + " King has been killed!";
-
             Debug.Log("Winner = " + winner);
             Debug.Log("PhotonNetwork.Nickname = " + PhotonNetwork.NickName);
 
@@ -257,6 +256,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         Overlay.gameObject.SetActive(true);
         yield return new WaitForSeconds(time);
         Overlay.gameObject.SetActive(false);
+    }
+
+    //Show pop up message in game - text = msg shown, time = length of msg popup
+    private void ShowMessage(String text)
+    {
+        MessageText.text = text;
+        ExtraMessageText.text = message;
+        Overlay.gameObject.SetActive(true);
     }
 }
 

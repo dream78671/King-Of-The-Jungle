@@ -31,6 +31,9 @@ public class PlayfabManager : MonoBehaviour
         {
             messageText.text = "Password too short (Minimum 6 Characters)";
             return;
+        } else if (RegisterUsernameInput.text.Length < 4)
+        {
+            messageText.text = "Username too short (Minimum 4 characters)"; 
         }
 
         var request = new RegisterPlayFabUserRequest
@@ -40,7 +43,6 @@ public class PlayfabManager : MonoBehaviour
             RequireBothUsernameAndEmail = false
         };
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
-        
     }
 
     void OnRegisterSuccess(RegisterPlayFabUserResult result)

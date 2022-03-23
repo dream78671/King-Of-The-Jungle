@@ -11,8 +11,8 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject ConnectPanel;
     [SerializeField] private GameObject StartGameButton;
     [SerializeField] private Text StatusText;
+    [SerializeField] private Text WelcomeMessage;
 
-    private bool isConnecting = false;
     private const string gameVersion = "1.0";
 
     private string[] Maps = new string[] { "Game1", "Game2" }; 
@@ -63,8 +63,9 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     {
         ShowStatus("Connected to Servers");
         StartGameButton.SetActive(true);
+        WelcomeMessage.text = "Welcome " + PlayerPrefs.GetString("PlayerName");
         PhotonNetwork.NickName = PlayerPrefs.GetString("PlayerName");
-
+        Debug.Log(PhotonNetwork.NickName);
     }
 
     //If no room available, create new room
@@ -78,7 +79,6 @@ public class ConnectManager : MonoBehaviourPunCallbacks
     //If Disconnected or no room made/found, take back to Lobby
     public override void OnDisconnected(DisconnectCause cause)
     {
-        isConnecting = false;
         ConnectPanel.SetActive(true); 
     }
 

@@ -44,6 +44,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridBrushEditor
@@ -51,6 +52,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -68,8 +70,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -228,6 +232,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3166}
     - Class: 114
+      Script: {instanceID: 3444}
+    - Class: 114
       Script: {instanceID: 3668}
     - Class: 114
       Script: {instanceID: 3686}
@@ -322,6 +328,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3112}
     - Class: 114
       Script: {instanceID: 3166}
+    - Class: 114
+      Script: {instanceID: 3444}
     - Class: 114
       Script: {instanceID: 3668}
     - Class: 114
@@ -515,6 +523,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3166}
     - Class: 114
+      Script: {instanceID: 3444}
+    - Class: 114
       Script: {instanceID: 3570}
     - Class: 114
       Script: {instanceID: 3608}
@@ -565,7 +575,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6548}
     - Class: 114
-      Script: {instanceID: 28482}
+      Script: {instanceID: 29458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -757,13 +767,13 @@ ScriptsOnlyBuild:
     className: SlotLanes
   - hash:
       serializedVersion: 2
-      Hash: 5811fbc196802ddb783f58e8cf7b5528
+      Hash: 1efc5818db3cd7541193cefaee3af9bf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ConnectManager
   - hash:
       serializedVersion: 2
-      Hash: 58e0eb3565d5dc326678963526e2efdb
+      Hash: a2c74b0a9174cd05745ac45f468acb0f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatManager
@@ -2058,4 +2068,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/ConnectLobby.unity
   - Assets/Scenes/Game1.unity
   - Assets/Scenes/Game2.unity
-  playerPath: /Users/sully/Desktop/Game/King-Of-The-Jungle/KOTJ-Personal/King_Of_The_Jungle/GameBuild.app
+  playerPath: /Users/shakil/Documents/KOTJ-Game.app
