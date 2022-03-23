@@ -94,7 +94,7 @@ public class GunMechanics : MonoBehaviourPunCallbacks, IPunObservable
         {
             items[itemIndex].Use(dirMultiplier);
             LocalPlayer.canShoot = false;
-            if (itemIndex != 0)
+            if (itemIndex != 1) //If the weapon isn't a pistol
             {
                 LocalPlayer.canMove = false;
             }

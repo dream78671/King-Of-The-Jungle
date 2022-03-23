@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
   itemName: Rocket Launcher
-  damage: 50
-  lifeSpan: 0
-  splash: 1
+  damage: 35

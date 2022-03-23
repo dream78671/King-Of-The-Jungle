@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
 {
     public float damage; //Damage passed from Weapon Class
     public float lifeTimeSeconds;
+    public bool splash;
     private PhotonView PV; 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -19,6 +20,7 @@ public class Projectile : MonoBehaviour
     {
         PV = GetComponent<PhotonView>();
         Destroy(gameObject, lifeTimeSeconds);
+        Debug.Log(splash);
     }
 
 }
