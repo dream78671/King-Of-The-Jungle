@@ -470,15 +470,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.b
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.g
-      value: 0.69411767
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.r
-      value: 0.9490197
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469297, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -546,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1048,14 +1048,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.90588236}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 27565ff3a4a7947bca7f4f5fdccccdfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1809,15 +1809,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.b
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.g
-      value: 0.69411767
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.r
-      value: 0.9490197
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469297, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1857,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1995,14 +1995,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.90588236}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 27565ff3a4a7947bca7f4f5fdccccdfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2638,11 +2638,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782254878557283, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782254878557283, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.g
-      value: 0.032773755
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782254878557283, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.r
@@ -2658,15 +2658,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.b
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.g
-      value: 0.69411767
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.r
-      value: 0.9490197
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Pivot.x
@@ -2678,7 +2678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2961,15 +2961,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.b
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.g
-      value: 0.69411767
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469296, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_Color.r
-      value: 0.9490197
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469297, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3065,7 +3065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2365782256294469299, guid: de9b0285edf724f3ebac5029f83e9110, type: 3}
       propertyPath: m_AnchorMax.x
