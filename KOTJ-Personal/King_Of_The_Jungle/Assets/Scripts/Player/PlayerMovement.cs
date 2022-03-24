@@ -14,8 +14,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower;
     [SerializeField] int maxJumps;
     private int jumpCount;
-    public bool grounded;
 
+    private bool grounded = true;
+    private bool running = false;
+
+    //void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    //{
+    //    if (stream.IsWriting)
+    //    {
+    //        stream.SendNext(running);
+    //        stream.SendNext(grounded);
+    //    }
+    //    else if (stream.IsReading)
+    //    {
+    //        running = (bool)stream.ReceiveNext();
+    //        grounded = (bool)stream.ReceiveNext();
+    //    }
+    //}
 
     private void Awake()
     {
@@ -29,14 +44,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!PV.IsMine)
+            return;
+
         if (!Player.canMove)
         {
             anim.GetComponent<Animator>().enabled = false;
             return;
         }
-            
-        if (!PV.IsMine)
-            return;
 
         anim.GetComponent<Animator>().enabled = true;
 
@@ -57,15 +72,17 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
         }
 
+        running = horizontalInput != 0;
+
         //If character is moving, turn run animation on, else turn it off
-        anim.SetBool("Run", horizontalInput != 0);
+        anim.SetBool("Run", running);
         anim.SetBool("Grounded", grounded);
     }
 
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpPower);
-        anim.SetTrigger("Jump");
+        anim.SetBool("Jump", !grounded);
         jumpCount -= 1;
         grounded = false;
 
@@ -75,7 +92,10 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
+        {
+            anim.SetBool("Jump", !grounded);
             grounded = true;
+        }
         jumpCount = maxJumps;
     }
 }

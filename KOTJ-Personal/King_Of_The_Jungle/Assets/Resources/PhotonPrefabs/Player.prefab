@@ -323,7 +323,6 @@ MonoBehaviour:
   speed: 5
   jumpPower: 5
   maxJumps: 2
-  grounded: 0
 --- !u!1001 &98100698468132395
 PrefabInstance:
   m_ObjectHideFlags: 0

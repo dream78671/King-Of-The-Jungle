@@ -15,7 +15,7 @@ public class ConnectManager : MonoBehaviourPunCallbacks
 
     private const string gameVersion = "1.0";
 
-    private string[] Maps = new string[] { "Game1", "Game2" }; 
+    private string[] Maps = new string[] {"Game2" }; 
 
     void Awake()
     {
@@ -94,8 +94,7 @@ public class ConnectManager : MonoBehaviourPunCallbacks
         base.OnPlayerEnteredRoom(newPlayer);
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.IsMasterClient)
         {
-            string Level = Maps[Random.Range(0, 2)].ToString().Replace("'", "");
-            Debug.Log(Level);
+            string Level = Maps[Random.Range(0, 1)].ToString().Replace("'", "");
             //Used instead of SceneManager.LoadScene, Using PhotonsLoadLevel ensures all players load into the new scene. Look at Awake()
             PhotonNetwork.LoadLevel(Level);
             
