@@ -187,4 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   lifeTimeSeconds: 2
-  splash: 0
+  splashRange: 0
+  LayerToHit:
+    serializedVersion: 2
+    m_Bits: 128

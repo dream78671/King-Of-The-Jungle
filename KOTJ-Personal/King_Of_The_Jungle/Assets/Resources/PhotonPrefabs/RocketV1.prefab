@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7440161962458668426}
   - component: {fileID: 8292954363884533294}
   - component: {fileID: 6487985849387323333}
+  - component: {fileID: 2397788154189635195}
   m_Layer: 7
   m_Name: RocketV1
   m_TagString: Untagged
@@ -121,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19465041, y: 0.0011082888}
+  m_Offset: {x: 0.15487027, y: 0.004168272}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.21222067, y: 0.099294424}
+  m_Size: {x: 0.34074068, y: 0.10541439}
   m_EdgeRadius: 0
 --- !u!114 &7440161962458668426
 MonoBehaviour:
@@ -185,6 +186,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a80bee0baab44d6eaa65ec87fd5c797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 35
+  damage: 50
   lifeTimeSeconds: 1
-  splash: 1
+  splashRange: 3.09
+  LayerToHit:
+    serializedVersion: 2
+    m_Bits: 128
+  explosion: {fileID: 3099566844151317887, guid: b643c6f15bb1c4224bb49f28c06c9d43, type: 3}
+--- !u!114 &2397788154189635195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737099595901786824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843f4f199caae40a29479e3200c55df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splashRange: 0
+  force: 0
+  LayerToHit:
+    serializedVersion: 2
+    m_Bits: 0

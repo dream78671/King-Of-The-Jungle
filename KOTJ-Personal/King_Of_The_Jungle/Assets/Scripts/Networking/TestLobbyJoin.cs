@@ -77,7 +77,7 @@ public class TestLobbyJoin : MonoBehaviourPunCallbacks
     //When room has been joined
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Game1");
+        PhotonNetwork.LoadLevel("Game2");
     }
 
     //Once 2 players in a room, master client changes everyone to the game scene
@@ -87,7 +87,7 @@ public class TestLobbyJoin : MonoBehaviourPunCallbacks
         if (PhotonNetwork.CurrentRoom.PlayerCount == 1 && PhotonNetwork.IsMasterClient)
         {
             //Used instead of SceneManager.LoadScene, Using PhotonsLoadLevel ensures all players load into the new scene. Look at Awake()
-            PhotonNetwork.LoadLevel("Game1");
+            PhotonNetwork.LoadLevel("Game2");
         }
     }
 

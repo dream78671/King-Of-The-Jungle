@@ -52,6 +52,9 @@ MonoBehaviour:
   - RPC_EquipItem
   - RPC_ShowItemHolder
   - RPC_ShowItem
+  - RPC_ExplosionEffect
+  - RPC_PunDestroy
+  - RPC_PlayerForce
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

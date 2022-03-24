@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower;
     [SerializeField] int maxJumps;
     private int jumpCount;
-    private bool grounded;
+    public bool grounded;
 
 
     private void Awake()
