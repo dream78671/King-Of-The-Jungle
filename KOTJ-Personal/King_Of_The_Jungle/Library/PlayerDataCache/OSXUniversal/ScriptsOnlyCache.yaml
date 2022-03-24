@@ -69,10 +69,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -150,13 +148,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3816}
     - Class: 114
-      Script: {instanceID: 4284}
+      Script: {instanceID: 4286}
     - Class: 114
-      Script: {instanceID: 4704}
+      Script: {instanceID: 4706}
     - Class: 114
-      Script: {instanceID: 5414}
+      Script: {instanceID: 5416}
     - Class: 114
-      Script: {instanceID: 6116}
+      Script: {instanceID: 6118}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -233,13 +231,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3816}
     - Class: 114
-      Script: {instanceID: 4704}
+      Script: {instanceID: 4706}
     - Class: 114
-      Script: {instanceID: 5050}
+      Script: {instanceID: 5052}
     - Class: 114
-      Script: {instanceID: 5432}
+      Script: {instanceID: 5434}
     - Class: 114
-      Script: {instanceID: 5880}
+      Script: {instanceID: 5882}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -322,13 +320,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3816}
     - Class: 114
-      Script: {instanceID: 4704}
+      Script: {instanceID: 4706}
     - Class: 114
-      Script: {instanceID: 5050}
+      Script: {instanceID: 5052}
     - Class: 114
-      Script: {instanceID: 5432}
+      Script: {instanceID: 5434}
     - Class: 114
-      Script: {instanceID: 5880}
+      Script: {instanceID: 5882}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -397,11 +395,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3816}
     - Class: 114
-      Script: {instanceID: 4350}
+      Script: {instanceID: 4352}
     - Class: 114
-      Script: {instanceID: 4704}
+      Script: {instanceID: 4706}
     - Class: 114
-      Script: {instanceID: 4796}
+      Script: {instanceID: 4798}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -516,45 +514,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3816}
     - Class: 114
-      Script: {instanceID: 3832}
+      Script: {instanceID: 3818}
     - Class: 114
-      Script: {instanceID: 4504}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 4704}
+      Script: {instanceID: 4506}
     - Class: 114
-      Script: {instanceID: 4784}
+      Script: {instanceID: 4706}
     - Class: 114
-      Script: {instanceID: 4978}
+      Script: {instanceID: 4786}
     - Class: 114
-      Script: {instanceID: 4984}
+      Script: {instanceID: 4980}
     - Class: 114
-      Script: {instanceID: 5050}
+      Script: {instanceID: 4986}
     - Class: 114
-      Script: {instanceID: 5088}
+      Script: {instanceID: 5052}
     - Class: 114
-      Script: {instanceID: 5226}
+      Script: {instanceID: 5090}
     - Class: 114
-      Script: {instanceID: 5294}
+      Script: {instanceID: 5228}
     - Class: 114
-      Script: {instanceID: 5432}
+      Script: {instanceID: 5296}
     - Class: 114
-      Script: {instanceID: 5450}
+      Script: {instanceID: 5434}
     - Class: 114
-      Script: {instanceID: 5880}
+      Script: {instanceID: 5452}
     - Class: 114
-      Script: {instanceID: 5886}
+      Script: {instanceID: 5882}
     - Class: 114
       Script: {instanceID: 5888}
     - Class: 114
-      Script: {instanceID: 6080}
+      Script: {instanceID: 5890}
     - Class: 114
-      Script: {instanceID: 6102}
+      Script: {instanceID: 6082}
     - Class: 114
-      Script: {instanceID: 6548}
+      Script: {instanceID: 6104}
     - Class: 114
-      Script: {instanceID: 31398}
+      Script: {instanceID: 6550}
     - Class: 114
-      Script: {instanceID: 33306}
+      Script: {instanceID: 35708}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1260,6 +1258,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: f3c434272d167884e5cc95e687eb5c74
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Explosion
   - hash:
       serializedVersion: 2
       Hash: d835e37be8caf473a0d64dc941f2a2a8
@@ -2040,12 +2044,6 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit.Forms
     className: UserIdUiForm
-  - hash:
-      serializedVersion: 2
-      Hash: f3c434272d167884e5cc95e687eb5c74
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Explosion
   platform: 2
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
@@ -2053,4 +2051,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/ConnectLobby.unity
   - Assets/Scenes/Game1.unity
   - Assets/Scenes/Game2.unity
-  playerPath: /Users/shakil/Documents/KOTJ-Game.app
+  playerPath: /Users/sully/Desktop/Game/King-Of-The-Jungle/KOTJ-Personal/King_Of_The_Jungle/GameBuild.app

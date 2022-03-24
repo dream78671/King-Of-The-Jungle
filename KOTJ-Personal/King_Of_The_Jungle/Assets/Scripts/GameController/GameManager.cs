@@ -265,6 +265,25 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         ExtraMessageText.text = message;
         Overlay.gameObject.SetActive(true);
     }
+
+    public void LoadMenu()
+    {
+        //Time.timeScale = 1f;
+        object[] quit = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString() };
+        PhotonNetwork.RaiseEvent(QUIT, quit, raiseEventOptions, SendOptions.SendReliable);
+        SceneManager.LoadScene("ConnectLobby");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        object[] quit = new object[] { PhotonNetwork.NickName, PhotonNetwork.PlayerListOthers[0].ToString() };
+        PhotonNetwork.RaiseEvent(QUIT, quit, raiseEventOptions, SendOptions.SendReliable);
+        Application.Quit();
+
+
+    }
+
 }
 
 
